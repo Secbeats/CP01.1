@@ -1,0 +1,9 @@
+@include('includes.head')
+@if(Auth::user())
+    @include('includes.auth-menus')
+@else
+    @include('includes.menus')
+@endif
+@include('includes.messages')
+@yield('content')
+@include('includes.footer')
