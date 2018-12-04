@@ -1,29 +1,29 @@
-<html>
-<!-- head -->
+<!DOCTYPE html>
+<html lang="zxx">
+
 <head>
-    <title>Helping Ray</title>
-    <link href="{{ asset('/public/assets/css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" /><!-- bootstrap-CSS -->
-    <link rel="stylesheet" href="{{ asset('/public/assets/css/bootstrap-select.css') }}"><!-- bootstrap-select-CSS -->
-    <link href="{{ asset('/public/assets/css/font-awesome.css') }}" rel="stylesheet" type="text/css" media="all" /><!-- Fontawesome-CSS -->
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script type='text/javascript' src='{{ asset('/public/assets/js/jquery-2.2.3.min.js') }}'></script>
-    <link rel="stylesheet" href="{{ asset('/public/assets/css/bootstrap-datetimepicker.css') }}">
-    <!-- Custom Theme files -->
-    <!--theme-style-->
-    <link href="{{ asset('/public/assets/css/style.css') }}" rel="stylesheet" type="text/css" media="all" />
-    <!--//theme-style-->
-    <!--meta data-->
+    <title>Best Study an Education Category Bootstrap Responsive Website Template | Home :: w3layouts</title>
+    <!-- meta-tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="Donation, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <!--//meta data-->
-    <!-- online fonts -->
-    <link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Oxygen:300,400,700&amp;subset=latin-ext" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
-    <!-- /online fonts -->
+    <meta name="keywords" content="Soft Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
 
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- //meta-tags -->
+    <link href="{{ asset('/public/assets/css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{ asset('/public/assets/css/style.css') }}" rel="stylesheet" type="text/css" media="all" />
+    <!-- font-awesome -->
+    <link href="{{ asset('/public/assets/css/font-awesome.css') }}" rel="stylesheet">
+    <!-- fonts -->
+    <link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 </head>
-<!-- //head -->

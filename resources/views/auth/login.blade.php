@@ -1,69 +1,75 @@
 @extends('layouts.app')
 @section('content')
-    <div class="modal-body">
-        <div class="row">
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs">
-                <li class="active">Donation Login Panel</li>
+    <div class="inner_page_agile">
+    </div>
+    <div class="services-breadcrumb">
+        <div class="inner_breadcrumb">
+            <ul class="short_ls">
+                <li>
+                    <a href="{{url('/')}}">Home</a>
+                    <span>| |</span>
+                </li>
+                <li>Login</li>
             </ul>
-            @include('includes.messages')
-            @if(count( $errors ) > 0)
-                @foreach ($errors->all() as $error)
-                    <h1>{{ $error }}</h1>
-                @endforeach
-            @endif
-            @if(isset($errors))
-                @foreach($errors as $error)
-                    <div class="alert alert-danger" role="alert">
-                        {{ $error }}
-                    </div>
-            @endforeach
-            @endif
-            <!-- Tab panes -->
-            <div class="tab-content">
-                <div class="tab-pane active" id="Login">
-                    <form  class="form-horizontal" method="POST" action="{{ route('login') }}">
-                        @csrf
-                        <div class="form-group">
-                            <label for="email" class="col-sm-2 control-label">
-                                Email</label>
-                            <div class="col-sm-6">
-                                <input type="email" name="email" class="form-control" id="email1" placeholder="Email" required autofocus />
+        </div>
+    </div>
+    <!-- //short-->
+    <div class="register-form-main">
+        <div class="container">
+            <div class="title-div">
+                <h3 class="tittle">
+                    <span>L</span>ogin
+                    <span>F</span>orm
+                </h3>
+                <div class="tittle-style">
+                    @if(isset($errors))
+                        @foreach($errors as $error)
+                            <div class="alert alert-danger" role="alert">
+                                {{ $error }}
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1" class="col-sm-2 control-label">
-                                Password</label>
-                            <div class="col-sm-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-2"></div>
-                                <div class="col-sm-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-2"></div>
-                            <div class="col-sm-6">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
-                                </a>
-                            </div>
-                        </div>
-                    </form>
+                        @endforeach
+                    @endif
                 </div>
+            </div>
+            <div class="login-form">
+                <form  class="form-horizontal" method="POST" action="{{ route('login') }}">
+                    @csrf
+                    <div class="">
+                        <p>User Name </p>
+                        <input type="email" name="email" placeholder="Email" required autofocus />
+                        @if ($errors->has('email'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('email') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                    <div class="">
+                        <p>Password</p>
+                        <input type="password" name="password" required>
+                        @if ($errors->has('password'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('password') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                    <label class="anim">
+                        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                        <span> Remember me ?</span>
+                    </label>
+                    <div class="login-agileits-bottom wthree">
+                        <h6>
+                            <a class="btn btn-link" href="{{ route('password.request') }}">
+                                {{ __('Forgot Your Password?') }}
+                            </a>
+                        </h6>
+                    </div>
+                    <input type="submit" value="Login">
+                    <div class="register-forming">
+                        <p>To Register New Account --
+                            <a href="{{ route('register') }}">Click Here</a>
+                        </p>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

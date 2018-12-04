@@ -1,84 +1,140 @@
-<!--footer-->
-<footer>
-    <div class="w3l-footer-bottom">
-        <div class="container-fluid">
-            <div class="col-md-4 w3-footer-logo">
-                <h2><a href="{{ url('/') }}">Helping Ray</a></h2>
+<!-- footer -->
+<div class="mkl_footer">
+    <div class="sub-footer">
+        <div class="container">
+            <div class="mkls_footer_grid">
+                <div class="col-xs-4 mkls_footer_grid_left">
+                    <h4>Location:</h4>
+                    <p>educa mfdflimbg 1235, Ipswich,
+                        <br> Foxhall Road, USA</p>
+                </div>
+                <div class="col-xs-4 mkls_footer_grid_left">
+                    <h4>Mail Us:</h4>
+                    <p>
+                        <span>Phone : </span>001 234 5678</p>
+                    <p>
+                        <span>Email : </span>
+                        <a href="mailto:info@example.com">mail@example.com</a>
+                    </p>
+                </div>
+                <div class="col-xs-4 mkls_footer_grid_left">
+                    <h4>Opening Hours:</h4>
+                    <p>Working days : 8am-10pm</p>
+                    <p>Sunday
+                        <span>(closed)</span>
+                    </p>
+                </div>
+                <div class="clearfix"> </div>
             </div>
-            <div class="col-md-8 agileits-footer-class">
-                <p >© 2018 Helping Ray. All Rights Reserved | Powered by  <a href="http://secbeats.com/" target="_blank">Secbeats</a> </p>
+            <div class="botttom-nav-allah">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About Us</a>
+                    </li>
+                    <li>
+                        <a href="courses.html">Courses</a>
+                    </li>
+                    <li>
+                        <a href="join.html">Join Us</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
             </div>
-            <div class="clearfix"> </div>
+            <!-- footer-button-info -->
+            <div class="footer-middle-thanks">
+                <h2>Thanks For watching</h2>
+            </div>
+            <!-- footer-button-info -->
         </div>
     </div>
-</footer>
-<!--//footer-->
-<div class="modal fade" id="logout-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div  class="modal-dialog" role="document">
-        <div class="modal-content modal-form">
-            <form method="post" action="{{ url('/logout') }}">
-                @csrf
-                <div class="modal-body text-center modal-padding">
-                    <div class="icon-delete text-center"><i class="fas fa-sign-out-alt"></i></div>
-                    <p>Are you sure you want to logout?</p>
-                    <button type="submit" class="btn btn-default">Yes</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-                </div>
-            </form>
+    <div class="footer-copy-right">
+        <div class="container">
+            <div class="allah-copy">
+                <p>© 2018 Best Study. All rights reserved | Design by
+                    <a href="http://w3layouts.com/">W3layouts</a>
+                </p>
+            </div>
+            <div class="footercopy-social">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span class="fa fa-facebook"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="fa fa-twitter"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="fa fa-rss"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="fa fa-vk"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
         </div>
     </div>
 </div>
+<!--/footer -->
 
-<!-- for bootstrap working -->
+<!-- js files -->
+<!-- js -->
+<script src="{{ asset('/public/assets/js/jquery-2.1.4.min.js') }}"></script>
+<!-- bootstrap -->
 <script src="{{ asset('/public/assets/js/bootstrap.js') }}"></script>
-<script src="{{ asset('/public/assets/js/moment.js') }}"></script>
-<script src="{{ asset('/public/assets/js/bootstrap-datetimepicker.min.js') }}"></script>
-<!-- //for bootstrap working --><!-- Responsive-slider -->
-<!-- Banner-slider -->
-<script src="{{ asset('/public/assets/js/responsiveslides.min.js') }}"></script>
+<!-- stats numscroller-js-file -->
+<script src="{{ asset('/public/assets/js/numscroller-1.0.js') }}"></script>
+<!-- //stats numscroller-js-file -->
+
+<!-- Flexslider-js for-testimonials -->
 <script>
-    $(function () {
-        $("#slider").responsiveSlides({
-            auto: true,
-            speed: 500,
-            namespace: "callbacks",
-            pager: true,
+    $(window).load(function () {
+        $("#flexiselDemo1").flexisel({
+            visibleItems: 1,
+            animationSpeed: 1000,
+            autoPlay: false,
+            autoPlaySpeed: 3000,
+            pauseOnHover: true,
+            enableResponsiveBreakpoints: true,
+            responsiveBreakpoints: {
+                portrait: {
+                    changePoint: 480,
+                    visibleItems: 1
+                },
+                landscape: {
+                    changePoint: 640,
+                    visibleItems: 1
+                },
+                tablet: {
+                    changePoint: 768,
+                    visibleItems: 1
+                }
+            }
         });
+
     });
 </script>
-<!-- //Banner-slider -->
-<!-- //Responsive-slider -->
-<!-- Bootstrap select option script -->
-<script src="{{ asset('/public/assets/js/bootstrap-select.js') }}"></script>
+<script src="{{ asset('/public/assets/js/jquery.flexisel.js') }}"></script>
+<!-- //Flexslider-js for-testimonials -->
+<!-- smooth scrolling -->
+<script src="{{ asset('/public/assets/js/SmoothScroll.min.js') }}"></script>
+<script src="{{ asset('/public/assets/js/move-top.js') }}"></script>
+<script src="{{ asset('/public/assets/js/easing.js') }}"></script>
+<!-- here stars scrolling icon -->
 <script>
     $(document).ready(function () {
-        var mySelect = $('#first-disabled2');
-
-        $('#special').on('click', function () {
-            mySelect.find('option:selected').prop('disabled', true);
-            mySelect.selectpicker('refresh');
-        });
-
-        $('#special2').on('click', function () {
-            mySelect.find('option:disabled').prop('disabled', false);
-            mySelect.selectpicker('refresh');
-        });
-
-        $('#basic2').selectpicker({
-            liveSearch: true,
-            maxOptions: 1
-        });
-    });
-</script>
-<!-- //Bootstrap select option script -->
-
-<!-- easy-responsive-tabs -->
-<link rel="stylesheet" type="text/css" href="{{ asset('/public/assets/css/easy-responsive-tabs.css') }}" />
-<script src="{{ asset('/public/assets/js/easyResponsiveTabs.js') }}"></script>
-<!-- //easy-responsive-tabs -->
-<!-- here stars scrolling icon -->
-<script type="text/javascript">
-    $(document).ready(function() {
         /*
             var defaults = {
             containerID: 'toTop', // fading element id
@@ -88,25 +144,16 @@
             };
         */
 
-        $().UItoTop({ easingType: 'easeOutQuart' });
+        $().UItoTop({
+            easingType: 'easeOutQuart'
+        });
 
     });
 </script>
-<!-- start-smoth-scrolling -->
-<script type="text/javascript" src="{{ asset('/public/assets/js/move-top.js') }}"></script>
-<script type="text/javascript" src="{{ asset('/public/assets/js/easing.js') }}"></script>
-<script type="text/javascript" src="{{ asset('/public/assets/js/custom.js') }}"></script>
-<script type="text/javascript">
-    jQuery(document).ready(function($) {
-        $(".scroll").click(function(event){
-            event.preventDefault();
-            $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-        });
-    });
-</script>
-<!-- start-smoth-scrolling -->
 <!-- //here ends scrolling icon -->
+<!-- smooth scrolling -->
+<!-- //js-files -->
+
 </body>
-<!-- //body -->
+
 </html>
-<!-- //html -->
