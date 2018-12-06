@@ -92,7 +92,7 @@ label {
 
 .bottom_header_right {
     float: right;
-    width: 25%;
+    width: 32%;
 }
 
 .bottom-social-icons {
@@ -3201,7 +3201,7 @@ h3.title-w3l.w3l-2:before {
     }
     .contact-text1 h4 {
         font-size: 27px;
-    }    
+    }
     .login-form {
         padding: 30px;
     }
@@ -3225,7 +3225,7 @@ h3.title-w3l.w3l-2:before {
         margin: 22px 0 0;
     }
     .anim {
-        margin: 8px 0 20px;    
+        margin: 8px 0 20px;
     }
     .login-agileits-bottom {
         margin: .8em 0;
@@ -3363,7 +3363,7 @@ h3.title-w3l.w3l-2:before {
     label.header {
         font-size: 17px;
         margin: 2px 0px 3px;
-        padding-left: 7px;        
+        padding-left: 7px;
     }
     .w3gallery-grids {
         width: 50%;
@@ -3677,7 +3677,7 @@ h3.title-w3l.w3l-2:before {
     .middle-right {
         float: left;
         width: 93%;
-    }    
+    }
     .midle-left-w3l {
         width: 7%;
     }
@@ -3932,7 +3932,7 @@ h3.title-w3l.w3l-2:before {
     }
     .address-grid ul li {
         font-size: 13px;
-        margin-bottom: 20px;    
+        margin-bottom: 20px;
     }
     .w3_address span {
         margin-right: .7em;
