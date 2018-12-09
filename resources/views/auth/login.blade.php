@@ -22,14 +22,17 @@
                     <span>F</span>orm
                 </h3>
                 <div class="tittle-style">
-                    @if(isset($errors))
-                        @foreach($errors as $error)
-                            <div class="alert alert-danger" role="alert">
-                                {{ $error }}
-                            </div>
-                        @endforeach
-                    @endif
+
                 </div>
+                <div class="clearfix"></div>
+                @include('includes.messages')
+                @if(isset($errors))
+                    @foreach($errors as $error)
+                        <div class="alert alert-danger" role="alert">
+                            {{ $error }}
+                        </div>
+                    @endforeach
+                @endif
             </div>
             <div class="login-form">
                 <form  class="form-horizontal" method="POST" action="{{ route('login') }}">

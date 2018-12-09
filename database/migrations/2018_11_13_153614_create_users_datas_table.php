@@ -17,11 +17,12 @@ class CreateUsersDatasTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->string('country');
+            $table->string('city')->nullable();
             $table->string('zip')->nullable();
             $table->string('address');
             $table->string('contact');
             $table->string('gender');
-            $table->string('organization')->nullable();
+            $table->string('type')->nullable();
             $table->timestamps();
         });
     }

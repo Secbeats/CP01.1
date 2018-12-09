@@ -1,3 +1,4 @@
+<div class="" style="margin-top: 2%;">
 @if(session()->has('success'))
     <div class="alert alert-success" role="alert">
         {{ session()->get('success') }}
@@ -9,3 +10,4 @@
         {{ session()->get('error') }}
     </div>
 @endif
+</div>

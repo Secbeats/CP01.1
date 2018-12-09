@@ -13,9 +13,10 @@
 
 
 Route::get('/', 'HomeController@index');
+Route::get('/sign-up', 'HomeController@registration');
 Route::post('/sign-up', 'HomeController@registration');
-Route::get('/account/user/verify', 'HomeController@verifyUser');
 Route::get('/sign-up/confirm', 'HomeController@confirm');
+Route::get('/account/user/verify', 'HomeController@verifyUser');
 Route::get('/how-it-works', 'HomeController@howItWorks');
 Route::get('/terms', 'HomeController@terms');
 

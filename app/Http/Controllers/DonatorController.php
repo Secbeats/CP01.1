@@ -42,7 +42,7 @@ class DonatorController extends Controller
                     $trans->save();
                     return redirect()
                         ->to('/donator/account-credit')
-                        ->with('success','You have successfully Donated '.$request->amount);
+                        ->with('success','You have successfully Donated '.$request->amount .' BDT');
                 }else{
                     return redirect()
                         ->to('/donator/account-credit')
@@ -90,7 +90,7 @@ class DonatorController extends Controller
     public function myProfile(Request $request){
         $id = Auth::id();
         $user = User::find($id);
-        $usd = UsersData::where('id',$id)->first();
+        $usd = UsersData::where('user_id',$id)->first();
         $errors = array();
         $data = $request->all();
         if($request->isMethod('post')){
@@ -100,11 +100,11 @@ class DonatorController extends Controller
                 $usr->name = $request->name;
                 $usr->save();
                 $ud->country = $request->country;
+                $ud->city = $request->city;
                 $ud->zip = $request->zip;
                 $ud->gender = $request->gender;
                 $ud->address = $request->address;
                 $ud->contact = $request->contact;
-                $ud->organization = $request->organization;
                 $ud->save();
                 return redirect()
                     ->to('/donator/my-profile')

@@ -23,12 +23,8 @@
                 </a>
             </div>
             <div class="header-top-righ">
-                <a href="{{ url('/login') }}"><span class="fa fa-sign-out" aria-hidden="true"></span>Login</a>
+                <a data-toggle="modal" data-target="#logout-modal" href="#"><span class="fa fa-sign-out" aria-hidden="true"></span>Logout</a>
             </div>
-            <div class="header-top-righ">
-                <a href="{{ url('/sign-up') }}"><span class="fa fa-user-plus" aria-hidden="true"></span>Join Us</a>
-            </div>
-
             <div class="clearfix"> </div>
         </div>
         <div class="clearfix"> </div>

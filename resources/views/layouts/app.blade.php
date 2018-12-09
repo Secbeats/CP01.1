@@ -1,5 +1,9 @@
 @include('includes.head')
-@include('includes.header')
+@if(Auth::user())
+    @include('includes.auth-header')
+    @else
+    @include('includes.header')
+    @endif
 @include('includes.menus')
 @yield('content')
 @include('includes.footer')

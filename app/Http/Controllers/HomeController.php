@@ -96,8 +96,9 @@ class HomeController extends Controller
                 $usd->address = $request->address;
                 $usd->contact = $request->contact;
                 $usd->country = $request->country;
+                $usd->city = $request->city;
                 $usd->zip = $request->zip;
-                $usd->organization = $request->organization;
+                $usd->type = $request->type;
                 $usd->save();
 
                 $linkExtension = $this->generateRandomString();
@@ -147,11 +148,12 @@ class HomeController extends Controller
                     ->with('success', 'Your Account Has Been created successfully!!');
             }else{
                 return redirect()
-                    ->to('/sign-up/confirm')
+                    ->to('/sign-up')
                     ->with('errors', $errors)
                     ->withInput();
             }
         }
+        return view('pages.sign-up');
     }
     /**
      * Confirm Registration
