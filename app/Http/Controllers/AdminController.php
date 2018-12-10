@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\DonationRequests;
+use App\DoneeFiles;
 use App\Transaction;
 use App\User;
 use App\UsersData;
@@ -58,6 +59,10 @@ class AdminController extends Controller
 
     public function approveDonation(Request $request){
         $dr = DonationRequests::where('status','requested')->get();
+        foreach ($dr as $d){
+            $files = DoneeFiles::where('user_id',$d->donee_id)->get();
+            $d->files = $files;
+        }
         return view('pages.admin.approve-donation',[
             'data' => $dr
         ]);

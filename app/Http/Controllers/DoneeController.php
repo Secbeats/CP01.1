@@ -38,6 +38,7 @@ class DoneeController extends Controller
             if(empty($errors)){
                 $dr->donee_id = $request->donee_id;
                 $dr->purpose = $request->purpose;
+                $dr->name = $request->name;
                 $dr->address = $request->address;
                 $dr->hospital = $request->hospital;
                 $dr->amount = $request->amount;
@@ -59,7 +60,7 @@ class DoneeController extends Controller
                 if($dr->save()){
                     return redirect()
                         ->to('/donee/request-donation')
-                        ->with('success','You have successfully Requested for '.$request->amount . ' Donation');
+                        ->with('success','You have successfully Requested for '.$request->amount . ' BDT Donation');
                 }else{
                     return redirect()
                         ->to('/donee/request-donation')
