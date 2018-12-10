@@ -3,29 +3,19 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Validator;
 
-class DonationRequests extends Model
+class DoneeFiles extends Model
 {
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = [
-        'country', 'address', 'gender', 'contact','file'
+        'user_id', 'file'
     ];
 
     protected $rules = array(
-        'purpose'  => 'required',
-        'address'  => 'required',
-        'amount' => 'required',
-        'contact' => 'required',
-        'file.*' => 'mimes:jpeg,jpg,png,gif|required|max:10000'
+        'file'  => 'required',
     );
     protected $errors;
 
-    protected $table = 'donation_requests';
+    protected $table = 'donee_files';
 
     public function validate($data)
     {

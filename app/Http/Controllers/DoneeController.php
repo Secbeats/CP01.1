@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\DonationRequests;
+use App\DoneeFiles;
 use App\User;
 use Auth;
 use App\UsersData;
@@ -19,9 +20,12 @@ class DoneeController extends Controller
      * Donation Request
     **/
     public function requestDonation(Request $request){
+        $id = Auth::id();
         $errors = array();
         $data = $request->all();
+
         if($request->isMethod('post')){
+            //dd($request->file('file'));
             $dr = new DonationRequests();
             if(!$dr->validate($data)){
                 $dr_e = $dr->errors();
@@ -35,9 +39,23 @@ class DoneeController extends Controller
                 $dr->donee_id = $request->donee_id;
                 $dr->purpose = $request->purpose;
                 $dr->address = $request->address;
+                $dr->hospital = $request->hospital;
                 $dr->amount = $request->amount;
                 $dr->contact = $request->contact;
                 $dr->status = $request->status;
+                if($request->hasFile('file')) {
+                    $files = $request->file('file');
+                    for($i = 0; $i < count($files); $i++){
+                        $name = $files[$i]->getClientOriginalName();
+                        $destinationPath = public_path('/uploads/donees/'.$id);
+                        $files[$i]->move($destinationPath, $name);
+
+                        $df = new DoneeFiles();
+                        $df->file_name = $name;
+                        $df->user_id = $id;
+                        $df->save();
+                    }
+                }
                 if($dr->save()){
                     return redirect()
                         ->to('/donee/request-donation')

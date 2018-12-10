@@ -12,6 +12,14 @@ body {
     background: #fff;
     font-family: 'Open Sans', sans-serif;
 }
+.red{
+    background-color: red;
+    color:#ffffff !important;
+}
+.green{
+    background-color: lawngreen;
+    color:#ffffff !important;
+}
 
 body a {
     text-decoration: none;

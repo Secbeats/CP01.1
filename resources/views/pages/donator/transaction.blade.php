@@ -12,7 +12,7 @@
                     <a href="{{ url('/') }}">Dashboard</a>
                     <span>| |</span>
                 </li>
-                <li>My Profile</li>
+                <li>Transaction History</li>
             </ul>
         </div>
     </div>

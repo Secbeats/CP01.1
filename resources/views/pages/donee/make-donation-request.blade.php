@@ -1,44 +1,76 @@
 @extends('layouts.app')
 @section('content')
-<div>
-    <i class="icon fa fa-flask inner-icon" aria-hidden="true"></i>
-    <div id="tab2" class="tab-grid">
-        @include('includes.messages')
-        @if(isset($errors))
-            @foreach($errors as $error)
-                <div class="alert alert-danger" role="alert">
-                    {{ $error }}
-                </div>
-            @endforeach
-        @endif
-        <div class="login-form">
-            <form action="{{ url('/donee/request-donation') }}" method="post" id="signup">
-                @csrf
-                <ol>
-                    <li>
-                        <h4>Donation Purpose</h4>
-                        <input type="text" id="customer" name="purpose" placeholder="Donation Purpose" required="required" />
-                    </li>
-                    <li>
-                        <h4>Address</h4>
-                        <input type="text" id="customer"  name="address" placeholder="Your Address">
-                    </li>
-                    <li>
-                        <h4>Contact</h4>
-                        <input type="text" id="customer"  name="contact" placeholder="Your Contact No">
-                    </li>
-                    <li>
-                        <h4>Amount</h4>
-                        <input type="number" id="customer"  name="amount" placeholder="50000">
-                    </li>
-                    <input type="hidden" name="donee_id" value="{{ Auth::user()->id }}">
-                    <input type="hidden" name="status" value="requested">
-                    <li>
-                        <input type="submit" class="submit" value="Make Request" />
-                    </li>
-                </ol>
-            </form>
+    <div class="inner_page_agile">
+
+    </div>
+    <!--//banner -->
+    <!-- short-->
+    <div class="services-breadcrumb">
+        <div class="inner_breadcrumb">
+            <ul class="short_ls">
+                <li>
+                    <a href="{{ url('/') }}">Dashboard</a>
+                    <span>| |</span>
+                </li>
+                <li>Get Donation</li>
+            </ul>
         </div>
     </div>
-</div>
-    @endsection
+    <!-- //short-->
+    <div class="register-form-main">
+        <div class="container">
+            <div class="title-div">
+                <h3 class="tittle">
+                    <span>G</span>et
+                    <span>D</span>onation
+                </h3>
+                <div class="tittle-style">
+                </div>
+                @include('includes.messages')
+                @if(isset($errors))
+                    @foreach($errors as $error)
+                        <div class="alert alert-danger" role="alert">
+                            {{ $error }}
+                        </div>
+                    @endforeach
+                @endif
+            </div>
+            <div class="register-form">
+                <form method="post" action="{{ url('/donee/request-donation') }}" enctype="multipart/form-data">
+                    @csrf
+                    <div class="fields-grid">
+                        <div class="styled-input">
+                            <input type="text" name="name" placeholder="Patients Name" required>
+                        </div>
+                        <div class="styled-input">
+                            <input type="text" name="purpose" placeholder="Patients Purpose of Donation" required>
+                        </div>
+                        <div class="styled-input">
+                            <input type="text" name="address" placeholder="Patients Address" required>
+                        </div>
+                        <div class="styled-input">
+                            <input type="text" name="contact" placeholder="Patients Contact No" required>
+                        </div>
+                        <div class="styled-input">
+                            <input type="text" name="hospital" placeholder="Patients Hospital Name" required>
+                        </div>
+                        <div class="styled-input">
+                            <input id="contact" name="amount" type="text" placeholder="Enter Amount Needed" required>
+                        </div>
+                        <label class="anim">
+                            <span>Upload Patients Scanned Documents(Format : .jpg/.jpeg/.png)</span>
+                        </label>
+                        <div class="styled-input">
+                            <input id="contact" name="file[]" type="file" multiple required>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <input type="hidden" name="donee_id" value="{{ Auth::user()->id }}">
+                    <input type="hidden" name="status" value="requested">
+                    <input type="submit" value="Get Donated">
+                </form>
+            </div>
+        </div>
+    </div>
+@endsection
