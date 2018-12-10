@@ -62,8 +62,13 @@
                             <td>{{ $d->hospital }}</td>
                             <td>{{ $d->amount }}</td>
                             <td>
-                                <a href="{{ url('/') }}"><button class="btn btn-success">Approve</button></a>
-                                <a href="{{ url('/') }}"><button class="btn btn-primary">Details</button></a>
+                                <form action="{{ url('/admin/approve-donation') }}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="dr_id" value="{{ $d->id }}">
+                                    <input type="hidden" name="status" value="approved">
+                                    <button type="submit" class="btn btn-success">Approve</button>
+                                </form>
+                                <a href="{{ url('/admin/view-details/'.$d->id) }}"><button class="btn btn-primary">Details</button></a>
                             </td>
                         </tr>
                     @endforeach

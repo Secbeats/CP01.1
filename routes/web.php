@@ -25,6 +25,8 @@ Route::prefix('admin')->group(function(){
     Route::get('/donees','AdminController@donees');
     Route::get('/total-donation','AdminController@totalDonation');
     Route::get('/approve-donation','AdminController@approveDonation');
+    Route::post('/approve-donation','AdminController@approveDonation');
+    Route::get('/view-details/{id}','AdminController@viewDetails');
     Route::get('/withdrawal','AdminController@withdrawal');
 });
 

@@ -4,7 +4,7 @@
     <div class="container">
         <div class="bottom_header_left">
             <p>
-                <span class="fa fa-map-marker" aria-hidden="true"></span>New Kampshire Mshinon, USA
+                <span class="fa fa-map-marker" aria-hidden="true"></span>Bashundhara R/A,Dhaka-1229.
             </p>
         </div>
         <div class="bottom_header_right">

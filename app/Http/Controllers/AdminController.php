@@ -63,8 +63,30 @@ class AdminController extends Controller
             $files = DoneeFiles::where('user_id',$d->donee_id)->get();
             $d->files = $files;
         }
+        if($request->isMethod('post')){
+            $dr = DonationRequests::find($request->dr_id);
+            $dr->status = $request->status;
+            if ($dr->save()){
+                return redirect()
+                    ->to('/admin/approve-donation')
+                    ->with('success','Donation Request has been approved for '. $dr->name);
+            }else{
+                return redirect()
+                    ->to('/admin/approve-donation')
+                    ->with('error','Donation Request can not be approved for '. $dr->name);
+            }
+        }
         return view('pages.admin.approve-donation',[
             'data' => $dr
+        ]);
+    }
+
+    public function viewDetails(Request $request){
+        $dr = DonationRequests::find($request->id);
+        $files = DoneeFiles::where('user_id',$dr->donee_id)->get();
+
+        return view('pages.admin.view-details',[
+            'data' => $files
         ]);
     }
 
