@@ -12,8 +12,8 @@
                     </button>
                     <a class="navbar-brand" href="index.html">
                         <h1>
-                            <span class="fa fa-leanpub" aria-hidden="true"></span>Best Study
-                            <label>Education & Courses</label>
+                            <span class="fa fa-lightbulb-o" aria-hidden="true"></span>Helping Ray
+                            <label>We Volunteer. We Aid. Spreading Hope</label>
                         </h1>
                     </a>
                 </div>
@@ -21,36 +21,23 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <nav class="link-effect-2" id="link-effect-2">
                         <ul class="nav navbar-nav">
-                            <li class="active">
-                                <a href="index.html" class="effect-3">Home</a>
+                            <li>
+                                <a href="{{ url('/') }}" class="effect-3">Home</a>
                             </li>
                             <li>
-                                <a href="about.html" class="effect-3">About Us</a>
+                                <a href="{{ url('/about') }}" class="effect-3">About Us</a>
                             </li>
                             <li>
-                                <a href="courses.html" class="effect-3">Courses</a>
+                                <a href="{{ url('/portfolio') }}" class="effect-3">Portfolio</a>
                             </li>
                             <li>
-                                <a href="join.html" class="effect-3">Join Us</a>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages
-                                    <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="icons.html">Web Icons</a>
-                                    </li>
-                                    <li>
-                                        <a href="codes.html">Short Codes</a>
-                                    </li>
-                                </ul>
+                                <a href="{{ url('/privacy') }}" class="effect-3">Privacy Policy</a>
                             </li>
                             <li>
-                                <a href="Gallery.html" class="effect-3">Gallery</a>
+                                <a href="{{ url('/terms') }}" class="effect-3">Terms and Conditions</a>
                             </li>
                             <li>
-                                <a href="contact.html" class="effect-3">Contact Us</a>
+                                <a href="{{ url('/contact') }}" class="effect-3">Contact Us</a>
                             </li>
                         </ul>
                     </nav>

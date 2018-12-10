@@ -13,43 +13,44 @@
             <div class="item active">
                 <div class="container">
                     <div class="carousel-caption">
-                        <h6>Welcome To Best Study</h6>
-                        <h3>Leading
-                            <span>University</span>
+                        <h6>Welcome To Helping Ray</h6>
+                        <h3>We Volunteer. We Aid.
+                            <span>Spreading Hope</span>
                         </h3>
-                        <p>Create an all-encompassing website for your school with ease.</p>
+                        <p>A Chance To Get Envolve With The Best Social Organization In Bangladesh</p>
                     </div>
                 </div>
             </div>
             <div class="item item2">
                 <div class="container">
                     <div class="carousel-caption">
-                        <h6>Welcome To Best Study</h6>
-                        <h3>Most Popular
-                            <span>Education</span>
+                        <h6>Welcome To Helping Ray</h6>
+                        <h3>We Volunteer. We Aid.
+                            <span>Spreading Hope</span>
                         </h3>
-                        <p>Create an all-encompassing website for your school with ease.</p>
+                        <p>A Chance To Get Envolve With The Best Social Organization In Bangladesh</p>
                     </div>
                 </div>
             </div>
             <div class="item item3">
                 <div class="container">
                     <div class="carousel-caption">
-                        <h6>Welcome To Best Study</h6>
-                        <h3>We Can
-                            <span>Teach</span> You</h3>
-                        <p>Create an all-encompassing website for your school with ease.</p>
+                        <h6>Welcome To Helping Ray</h6>
+                        <h3>We Volunteer. We Aid.
+                            <span>Spreading Hope</span>
+                        </h3>
+                        <p>A Chance To Get Envolve With The Best Social Organization In Bangladesh</p>
                     </div>
                 </div>
             </div>
             <div class="item item4">
                 <div class="container">
                     <div class="carousel-caption">
-                        <h6>Welcome To Best Study</h6>
-                        <h3>Most Popular
-                            <span>Education</span>
+                        <h6>Welcome To Helping Ray</h6>
+                        <h3>We Volunteer. We Aid.
+                            <span>Spreading Hope</span>
                         </h3>
-                        <p>Create an all-encompassing website for your school with ease.</p>
+                        <p>A Chance To Get Envolve With The Best Social Organization In Bangladesh</p>
                     </div>
                 </div>
             </div>
@@ -79,7 +80,7 @@
             <div class="welcome-sub-wthree">
                 <div class="col-md-6 banner_bottom_left">
                     <h4>About
-                        <span>Best Study</span>
+                        <span>Helping Ray</span>
                     </h4>
                     <p>Lorem Ipsum convallis diam consequat magna vulputate malesuada. Cras a ornare elit, Nulla viverra pharetra sem eget.</p>
                     <p>Pellentesque convallis diam consequat magna vulputate malesuada. Cras a ornare elit. Nulla viverra pharetra sem, eget
@@ -90,21 +91,21 @@
                 <div class="col-md-6 stats-info-agile">
                     <div class="col-xs-6 stats-grid stat-border">
                         <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='768' data-delay='.5' data-increment="1">768</div>
-                        <p>Faculties</p>
+                        <p>Donators</p>
                     </div>
                     <div class="col-xs-6 stats-grid">
                         <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='678' data-delay='.5' data-increment="1">678</div>
-                        <p>Approved Courses</p>
+                        <p>Donees</p>
                     </div>
                     <div class="clearfix"></div>
                     <div class="child-stat">
                         <div class="col-xs-6 stats-grid stat-border border-st2">
                             <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='800' data-delay='.5' data-increment="1">800</div>
-                            <p>Certified Teachers</p>
+                            <p>Certified Volunteer</p>
                         </div>
                         <div class="col-xs-6 stats-grid">
                             <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='485' data-delay='.5' data-increment="1">485</div>
-                            <p>Happy Students</p>
+                            <p>Hardworking Board of Directors</p>
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -316,8 +317,8 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <h4 class="modal-title">Best
-                        <span>Study</span>
+                    <h4 class="modal-title">Helping
+                        <span>Ray</span>
                     </h4>
                 </div>
                 <div class="modal-body">
@@ -338,7 +339,7 @@
     <div class="middle-sec-agile">
         <div class="container">
             <h4>Our
-                <span>Best Study</span> Institute</h4>
+                <span>Helping</span> Ray</h4>
             <ul>
                 <li>
                     <div class="midle-left-w3l">
@@ -371,7 +372,7 @@
                     <div class="clearfix"></div>
                 </li>
             </ul>
-            <a class="button-style" href="join.html">Join Now</a>
+            <a class="button-style" href="{{ url('/sign-up') }}">Join Now</a>
         </div>
         <div class="pencil-img">
             <img src="{{ asset('/public/assets/images/bg5.png') }}" alt="" />
@@ -384,7 +385,9 @@
             <div class="title-div">
                 <h3 class="tittle">
                     <span>O</span>ur
-                    <span>C</span>lient's
+                    <span>B</span>oard
+                    <span>O</span>f
+                    <span>D</span>irector's
                     <span>S</span>ay
                 </h3>
                 <div class="tittle-style">

@@ -5,8 +5,8 @@
             <div class="mkls_footer_grid">
                 <div class="col-xs-4 mkls_footer_grid_left">
                     <h4>Location:</h4>
-                    <p>educa mfdflimbg 1235, Ipswich,
-                        <br> Foxhall Road, USA</p>
+                    <p>Bashundhara R/A,
+                        <br> Dhaka, Bangladesh</p>
                 </div>
                 <div class="col-xs-4 mkls_footer_grid_left">
                     <h4>Mail Us:</h4>
@@ -14,13 +14,13 @@
                         <span>Phone : </span>001 234 5678</p>
                     <p>
                         <span>Email : </span>
-                        <a href="mailto:info@example.com">mail@example.com</a>
+                        <a href="mailto:support@helpingray.com">support@helpingray.com</a>
                     </p>
                 </div>
                 <div class="col-xs-4 mkls_footer_grid_left">
                     <h4>Opening Hours:</h4>
-                    <p>Working days : 8am-10pm</p>
-                    <p>Sunday
+                    <p>Working days : 10am-6pm</p>
+                    <p>Friday,Saturday
                         <span>(closed)</span>
                     </p>
                 </div>
@@ -29,34 +29,32 @@
             <div class="botttom-nav-allah">
                 <ul>
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="{{ url('/') }}">Home</a>
                     </li>
                     <li>
-                        <a href="about.html">About Us</a>
+                        <a href="{{ url('/about') }}">About Us</a>
                     </li>
                     <li>
-                        <a href="courses.html">Courses</a>
+                        <a href="{{ url('/portfolio') }}">Portfolio</a>
                     </li>
                     <li>
-                        <a href="join.html">Join Us</a>
+                        <a href="{{ url('/privacy') }}">Privacy Policy</a>
                     </li>
                     <li>
-                        <a href="contact.html">Contact Us</a>
+                        <a href="{{ url('/terms') }}">Terms and Conditions</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/contact') }}">Contact Us</a>
                     </li>
                 </ul>
             </div>
-            <!-- footer-button-info -->
-            <div class="footer-middle-thanks">
-                <h2>Thanks For watching</h2>
-            </div>
-            <!-- footer-button-info -->
         </div>
     </div>
     <div class="footer-copy-right">
         <div class="container">
             <div class="allah-copy">
-                <p>© 2018 Best Study. All rights reserved | Design by
-                    <a href="http://w3layouts.com/">W3layouts</a>
+                <p>© 2019 Helping Ray. All rights reserved | Design by
+                    <a href="http://www.secbeats.com/">Secbeats</a>
                 </p>
             </div>
             <div class="footercopy-social">
