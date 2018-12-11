@@ -69,7 +69,7 @@
                     <input type="submit" value="Login">
                     <div class="register-forming">
                         <p>To Register New Account --
-                            <a href="{{ route('register') }}">Click Here</a>
+                            <a href="{{ url('/sign-up') }}">Click Here</a>
                         </p>
                     </div>
                 </form>

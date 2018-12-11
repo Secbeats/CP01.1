@@ -10,10 +10,9 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="{{ url('/') }}">
                         <h1>
                             <span class="fa fa-lightbulb-o" aria-hidden="true"></span>Helping Ray
-                            <label>We Volunteer. We Aid. Spreading Hope</label>
                         </h1>
                     </a>
                 </div>
