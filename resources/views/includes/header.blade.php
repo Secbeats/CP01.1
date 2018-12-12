@@ -26,10 +26,11 @@
 
             <div class="header-top-righ">
                 <a href="{{ url('/login') }}"><span class="fa fa-sign-out" aria-hidden="true"></span>Login</a>
-            </div>
-            <div class="header-top-righ">
                 <a href="{{ url('/sign-up') }}"><span class="fa fa-user-plus" aria-hidden="true"></span>Join Us</a>
             </div>
+            {{-- <div class="header-top-righ">
+                <a href="{{ url('/sign-up') }}"><span class="fa fa-user-plus" aria-hidden="true"></span>Join Us</a>
+            </div> --}}
             {{--  <div class="header-top-righ">
                 <a href="{{ url('/register') }}"><span class="fa fa-user-plus" aria-hidden="true"></span>Join Us</a>
             </div>  --}}

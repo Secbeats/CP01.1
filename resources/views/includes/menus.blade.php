@@ -30,10 +30,10 @@
                                 <a href="{{ url('/portfolio') }}" class="effect-3">Portfolio</a>
                             </li>
                             <li>
-                                <a href="{{ url('/privacy') }}" class="effect-3">Privacy Policy</a>
+                                <a href="{{ url('/privacy') }}" class="effect-3">Privacy</a>
                             </li>
                             <li>
-                                <a href="{{ url('/terms') }}" class="effect-3">Terms and Conditions</a>
+                                <a href="{{ url('/terms') }}" class="effect-3">Terms</a>
                             </li>
                             <li>
                                 <a href="{{ url('/contact') }}" class="effect-3">Contact Us</a>

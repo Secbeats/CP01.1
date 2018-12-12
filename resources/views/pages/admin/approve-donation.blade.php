@@ -61,7 +61,7 @@
                             <td>{{ $d->contact }}</td>
                             <td>{{ $d->hospital }}</td>
                             <td>{{ $d->amount }}</td>
-                            <td>
+                            <td style="display:inline-flex">
                                 <form action="{{ url('/admin/approve-donation') }}" method="post">
                                     @csrf
                                     <input type="hidden" name="dr_id" value="{{ $d->id }}">
