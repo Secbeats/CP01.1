@@ -40,15 +40,6 @@
             </div>
             <div class="blog-agileinfo blog-info-mdl">
                 <div class="col-xs-8 blog-grid-text">
-                    <h4>Approve Donation</h4>
-                    <p>Sed interdum interdum accumsan. Aenean nec purus ac orci finibus facilisis. In sit amet placerat nisl, in auctor sapien.
-                        Donec ultricies faucibus ante in mattis earum rerum hic a sapiente delectus. </p>
-                    <a class="button-style" href="{{ url('/admin/approve-donation') }}">Approve Donation</a>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-            <div class="blog-agileinfo blog-info-mdl">
-                <div class="col-xs-8 blog-grid-text">
                     <h4>Withdrawal Fund</h4>
                     <p>Sed interdum interdum accumsan. Aenean nec purus ac orci finibus facilisis. In sit amet placerat nisl, in auctor sapien.
                         Donec ultricies faucibus ante in mattis earum rerum hic a sapiente delectus. </p>

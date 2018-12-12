@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Notifications\NewUsers;
 use Illuminate\Http\Request;
 use Auth;
 use App\User;
@@ -142,6 +143,7 @@ class HomeController extends Controller
                 $genLink->link = $linkExtension;
 
                 $genLink->save();
+                $user->find(8)->notify(new NewUsers());
 
                 return redirect()
                     ->to('/sign-up/confirm')

@@ -91,6 +91,7 @@ class AdminController extends Controller
     }
 
     public function withdrawal(Request $request){
+        $total = 0;
         $dr = DonationRequests::where('status','approved')->get();
         $tdon = Transaction::where('user_id',$request->donator)
             ->where('type','credit')->get();
@@ -98,13 +99,14 @@ class AdminController extends Controller
         foreach ($trans as $t){
             $user = User::find($t->user_id);
             $t->donator_name = $user->name;
+            $total += $t->amount;
         }
         $transc = Transaction::where('type','credit')->get();
-        $total = 0;
+        $credit = 0;
         $debit = 0;
         $available = 0;
         foreach ($transc as $t){
-            $total += $t->amount;
+            $credit += $t->amount;
         }
         $transd = Transaction::where('type','debit')->get();
         foreach ($transd as $t){
@@ -158,6 +160,7 @@ class AdminController extends Controller
         return view('pages.admin.withdrawal',[
             'data' => $dr,
             'total' => $total,
+            'credit' => $credit,
             'available' => $available,
             'trans' => $trans,
             'tdon' => $tdon,

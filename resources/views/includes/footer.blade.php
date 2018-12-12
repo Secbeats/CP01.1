@@ -89,7 +89,7 @@
 <div class="modal fade" id="logout-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div  class="modal-dialog" role="document">
         <div class="modal-content modal-form">
-            <form method="post" action="{{ url('/logout') }}">
+            <form method="post" action="{{ route('logout') }}">
                 @csrf
                 <div class="modal-body text-center modal-padding">
                     <div class="icon-delete text-center"><i class="fas fa-sign-out-alt"></i></div>

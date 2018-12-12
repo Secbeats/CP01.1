@@ -39,7 +39,7 @@
                         <h3>We Volunteer. We Aid.
                             <span>Spreading Hope</span>
                         </h3>
-                        <p>A Chance To Get Envolve With The Best Social Organization In Bangladesh</p>
+                        <p>A Chance To Get Involved With The Best Social Organization In Bangladesh</p>
                     </div>
                 </div>
             </div>
@@ -90,21 +90,21 @@
                 <!-- Stats-->
                 <div class="col-md-6 stats-info-agile">
                     <div class="col-xs-6 stats-grid stat-border">
-                        <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='768' data-delay='.5' data-increment="1">768</div>
+                        <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='5' data-delay='.5' data-increment="1">768</div>
                         <p>Donators</p>
                     </div>
                     <div class="col-xs-6 stats-grid">
-                        <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='678' data-delay='.5' data-increment="1">678</div>
+                        <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='2' data-delay='.5' data-increment="1">678</div>
                         <p>Donees</p>
                     </div>
                     <div class="clearfix"></div>
                     <div class="child-stat">
                         <div class="col-xs-6 stats-grid stat-border border-st2">
-                            <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='800' data-delay='.5' data-increment="1">800</div>
+                            <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='50' data-delay='.5' data-increment="1">800</div>
                             <p>Certified Volunteer</p>
                         </div>
                         <div class="col-xs-6 stats-grid">
-                            <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='485' data-delay='.5' data-increment="1">485</div>
+                            <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='5' data-delay='.5' data-increment="1">485</div>
                             <p>Hardworking Board of Directors</p>
                         </div>
                         <div class="clearfix"></div>

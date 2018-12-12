@@ -38,10 +38,10 @@
             <div class="register-form">
                 <form method="post" action="{{ url('/admin/withdrawal') }}">
                     @csrf
-                    <div class="fields-grid">
-                        <label class="header pull-left">Total Donated Amount: {{ $total }}</label>
+                    {{--<div class="fields-grid">
+                        <label class="header pull-left">Total Donated Amount: {{ $credit }}</label>
                         <label class="header pull-right">Available Amount: {{ $available }}</label>
-                    </div>
+                    </div>--}}
                     <div class="styled-input agile-styled-input-top">
                         <select id ="donator" class="category2" name="donator" required="">
                             <option selected disabled>Select Donator</option>

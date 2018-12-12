@@ -106,16 +106,23 @@ class DonatorController extends Controller
      **/
 
     public function viewDonee(Request $request){
+        $tr = DonationRequests::where('donee_id',$request->donee)
+            ->first();
+        $needed = $tr->amount;
         $trans = Transaction::where('user_role','admin')
             ->where('reference',$request->donee)->get();
+        $total = 0;
         foreach ($trans as $t){
             $user = User::find($t->donator);
             $t->d_name = $user->name;
             $donee = User::find($t->reference);
             $t->donee = $donee->name;
+            $total += $t->amount;
         }
         return view('pages.donator.view-donee',[
-            'data' => $trans
+            'data' => $trans,
+            'total' => $total,
+            'needed' => $needed
         ]);
     }
 

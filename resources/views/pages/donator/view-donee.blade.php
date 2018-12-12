@@ -36,11 +36,17 @@
                     @endforeach
                 @endif
             </div>
-            <div class="fields-grid">
-                <label class="header pull-left">Total Donated Amount: {{ $total }}</label>
-                <label class="header pull-right">Available Amount: {{ $available }}</label>
-            </div>
             <div class="register-form" style="overflow-x:auto;">
+                @if( $total >= $needed)
+                    <div class="fields-grid">
+                        <label class="header center-block" style="color:blue;">Donation Amount {{ $needed }} BDT Already Collected For This Donee !</label>
+                    </div>
+                @else
+                    <div class="fields-grid">
+                        <label class="header pull-left" style="color:red;">Neeeded Amount: {{ $needed }}</label>
+                        <label class="header pull-right" style="color: green;">Total Donation Amount: {{ $total }}</label>
+                    </div>
+                @endif
                 <table class="table table-striped table-bordered">
                     <thead class="thead-dark">
                     <tr>

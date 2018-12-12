@@ -25,52 +25,59 @@ class DoneeController extends Controller
         $data = $request->all();
 
         if($request->isMethod('post')){
+            $check = DonationRequests::where('donee_id',$request->donee_id)->first();
             //dd($request->file('file'));
-            $dr = new DonationRequests();
-            if(!$dr->validate($data)){
-                $dr_e = $dr->errors();
-                foreach ($dr_e->messages() as $k => $v){
-                    foreach ($v as $e){
-                        $errors[] = $e;
+            if(empty($check)){
+                $dr = new DonationRequests();
+                if(!$dr->validate($data)){
+                    $dr_e = $dr->errors();
+                    foreach ($dr_e->messages() as $k => $v){
+                        foreach ($v as $e){
+                            $errors[] = $e;
+                        }
                     }
                 }
-            }
-            if(empty($errors)){
-                $dr->donee_id = $request->donee_id;
-                $dr->purpose = $request->purpose;
-                $dr->name = $request->name;
-                $dr->address = $request->address;
-                $dr->hospital = $request->hospital;
-                $dr->amount = $request->amount;
-                $dr->contact = $request->contact;
-                $dr->status = $request->status;
-                if($request->hasFile('file')) {
-                    $files = $request->file('file');
-                    for($i = 0; $i < count($files); $i++){
-                        $name = $files[$i]->getClientOriginalName();
-                        $destinationPath = public_path('/uploads/donees/'.$id);
-                        $files[$i]->move($destinationPath, $name);
+                if(empty($errors)){
+                    $dr->donee_id = $request->donee_id;
+                    $dr->purpose = $request->purpose;
+                    $dr->name = $request->name;
+                    $dr->address = $request->address;
+                    $dr->hospital = $request->hospital;
+                    $dr->amount = $request->amount;
+                    $dr->contact = $request->contact;
+                    $dr->status = $request->status;
+                    if($request->hasFile('file')) {
+                        $files = $request->file('file');
+                        for($i = 0; $i < count($files); $i++){
+                            $name = $files[$i]->getClientOriginalName();
+                            $destinationPath = public_path('/uploads/donees/'.$id);
+                            $files[$i]->move($destinationPath, $name);
 
-                        $df = new DoneeFiles();
-                        $df->file_name = $name;
-                        $df->user_id = $id;
-                        $df->save();
+                            $df = new DoneeFiles();
+                            $df->file_name = $name;
+                            $df->user_id = $id;
+                            $df->save();
+                        }
                     }
-                }
-                if($dr->save()){
-                    return redirect()
-                        ->to('/donee/request-donation')
-                        ->with('success','You have successfully Requested for '.$request->amount . ' BDT Donation');
+                    if($dr->save()){
+                        return redirect()
+                            ->to('/donee/request-donation')
+                            ->with('success','You have successfully Requested for '.$request->amount . ' BDT Donation');
+                    }else{
+                        return redirect()
+                            ->to('/donee/request-donation')
+                            ->with('error','You Request Can not be processed At This Time ');
+                    }
                 }else{
                     return redirect()
                         ->to('/donee/request-donation')
-                        ->with('error','You Request Can not be processed At This Time ');
+                        ->with('errors', $errors)
+                        ->withInput();
                 }
             }else{
                 return redirect()
                     ->to('/donee/request-donation')
-                    ->with('errors', $errors)
-                    ->withInput();
+                    ->with('error','You Already Made A Request,You Can Not Make More Than One Request. Please Wait For Admin Approval,If It is Not Yet Approved ! ');
             }
         }
         return view('pages.donee.make-donation-request');
