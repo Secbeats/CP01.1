@@ -28,12 +28,14 @@ Route::prefix('admin')->group(function(){
     Route::post('/approve-donation','AdminController@approveDonation');
     Route::get('/view-details/{id}','AdminController@viewDetails');
     Route::get('/withdrawal','AdminController@withdrawal');
+    Route::post('/withdrawal','AdminController@withdrawal');
 });
 
 Route::prefix('donator')->group(function(){
     Route::get('/account-credit','DonatorController@accountCredit');
     Route::post('/account-credit','DonatorController@accountCredit');
     Route::get('/transaction-history','DonatorController@transactionHistory');
+    Route::get('/view-donee','DonatorController@viewDonee');
     Route::get('/donation-requests','DonatorController@donationRequests');
     Route::get('/my-donees','DonatorController@myDonees');
     Route::get('/my-profile','DonatorController@myProfile');

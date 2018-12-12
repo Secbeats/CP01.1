@@ -138,6 +138,16 @@
         });
 
     });
+    $('#donator').on('change',function (e) {
+        e.preventDefault();
+        var user = $(this).val();
+        var url = "{{ url('/admin/withdrawal') }}";
+        window.location.href = url+'?donator='+user;
+    });
+    $('#amount').on('change',function (e) {
+       e.preventDefault();
+       $('#trans').val($(this).find(':selected').attr('id'));
+    });
 </script>
 <script src="{{ asset('/public/assets/js/jquery.flexisel.js') }}"></script>
 <!-- //Flexslider-js for-testimonials -->

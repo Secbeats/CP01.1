@@ -1473,6 +1473,7 @@ li.aitsaitsresumewthreeli-1 {
 .register-form input[type="text"],
 .register-form input[type="email"],
 .register-form input[type="password"],
+.register-form input[type="number"],
 select.category2 {
     font-size: 16px;
     color: #5a5656;

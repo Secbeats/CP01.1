@@ -50,16 +50,20 @@
                             <input type="text" name="mobile_no" placeholder="Your Mobile No" required>
                         </div>
                         <div class="styled-input">
-                            <input id="contact" name="amount" type="text" placeholder="Enter Amount to donate" required>
+                            <input id="contact" name="amount" type="number" placeholder="Enter Amount to donate" required>
                         </div>
+                        @if(isset($donee))
+                        <div class="styled-input">
+                            <input id="contact" name="reference" type="text" value="{{ $donee }}" readonly>
+                        </div>
+                        @endif
                         <div class="clearfix"> </div>
                     </div>
                     <div class="clearfix"></div>
                     <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                     <input type="hidden" name="user_role" value="donator">
                     <input type="hidden" name="type" value="credit">
-                    <input type="hidden" name="status" value="requested">
-                    <input type="hidden" name="reference" value="{{ Auth::user()->id }}">
+                    <input type="hidden" name="status" value="approved">
                     <input type="submit" value="Donate">
                 </form>
             </div>

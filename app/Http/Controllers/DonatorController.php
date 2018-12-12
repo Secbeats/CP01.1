@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DonationRequests;
 use App\Transaction;
 use App\User;
 use App\UsersData;
@@ -55,7 +56,9 @@ class DonatorController extends Controller
                     ->withInput();
             }
         }
-        return view('pages.donator.donate');
+        return view('pages.donator.donate',[
+            'donee' => $request->donee
+        ]);
     }
 
     /**
@@ -73,7 +76,19 @@ class DonatorController extends Controller
      * Donee's list
      **/
     public function myDonees(){
-        return view('pages.donator.donee');
+        $id = Auth::id();
+        $trans = Transaction::where('user_id',$id)
+            ->where('type','debit')
+            ->get();
+        foreach ($trans as $t){
+            $dr = DonationRequests::where('donee_id',$t->reference)
+                ->where('status','approved')->first();
+            $t->dr = $dr;
+        }
+
+        return view('pages.donator.donee',[
+            'data' => $trans
+        ]);
     }
 
     /**
@@ -81,7 +96,27 @@ class DonatorController extends Controller
      **/
 
     public function donationRequests(){
-        return view('pages.donator.requests');
+        $dr = DonationRequests::where('status','approved')->get();
+        return view('pages.donator.requests',[
+            'data' => $dr
+        ]);
+    }
+    /**
+     * View Donee
+     **/
+
+    public function viewDonee(Request $request){
+        $trans = Transaction::where('user_role','admin')
+            ->where('reference',$request->donee)->get();
+        foreach ($trans as $t){
+            $user = User::find($t->donator);
+            $t->d_name = $user->name;
+            $donee = User::find($t->reference);
+            $t->donee = $donee->name;
+        }
+        return view('pages.donator.view-donee',[
+            'data' => $trans
+        ]);
     }
 
     /**

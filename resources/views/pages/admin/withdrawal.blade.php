@@ -39,6 +39,18 @@
                 <form method="post" action="{{ url('/admin/withdrawal') }}">
                     @csrf
                     <div class="fields-grid">
+                        <label class="header pull-left">Total Donated Amount: {{ $total }}</label>
+                        <label class="header pull-right">Available Amount: {{ $available }}</label>
+                    </div>
+                    <div class="styled-input agile-styled-input-top">
+                        <select id ="donator" class="category2" name="donator" required="">
+                            <option selected disabled>Select Donator</option>
+                            @foreach($trans as $t)
+                                <option value="{{ $t->user_id }}" @if($t->user_id == $user){{ 'Selected' }} @endif>{{ $t->donator_name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                        <div class="fields-grid">
                         <div class="styled-input agile-styled-input-top">
                             <select class="category2" name="medium" required="">
                                 <option selected disabled>Select Payment Medium</option>
@@ -49,18 +61,31 @@
                         <div class="styled-input">
                             <input type="text" name="mobile_no" placeholder="Your Mobile No" required>
                         </div>
-                        <div class="styled-input">
-                            <input id="contact" name="amount" type="text" placeholder="Enter Amount to donate" required>
+                            <div class="styled-input agile-styled-input-top">
+                                <select id="amount" class="category2" name="amount" required="">
+                                    <option selected disabled>Select Amount</option>
+                                    @foreach($tdon as $t)
+                                        <option value="{{ $t->amount }}" id="{{ $t->id }}">{{ $t->amount }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        <div class="styled-input agile-styled-input-top">
+                            <select class="category2" name="reference" required="">
+                                <option selected disabled>Select Donne to Donate</option>
+                                @foreach($data as $d)
+                                    <option value="{{ $d->donee_id }}">{{ $d->name }}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="clearfix"> </div>
                     </div>
                     <div class="clearfix"></div>
+                    <input type="hidden" name="trans_id" id="trans" value="">
                     <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
-                    <input type="hidden" name="user_role" value="donator">
-                    <input type="hidden" name="type" value="credit">
-                    <input type="hidden" name="status" value="requested">
-                    <input type="hidden" name="reference" value="{{ Auth::user()->id }}">
-                    <input type="submit" value="Donate">
+                    <input type="hidden" name="user_role" value="admin">
+                    <input type="hidden" name="type" value="debit">
+                    <input type="hidden" name="status" value="approved">
+                    <input type="submit" value="Withdrawal">
                 </form>
             </div>
         </div>

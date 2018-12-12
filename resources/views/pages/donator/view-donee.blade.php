@@ -12,7 +12,7 @@
                     <a href="{{ url('/') }}">Dashboard</a>
                     <span>| |</span>
                 </li>
-                <li>Donation Requests</li>
+                <li>View Donees Status</li>
             </ul>
         </div>
     </div>
@@ -21,8 +21,9 @@
         <div class="container">
             <div class="title-div">
                 <h3 class="tittle">
-                    <span>D</span>onation
-                    <span>R</span>equests
+                    <span>V</span>iew
+                    <span>D</span>onee
+                    <span>S</span>tatus
                 </h3>
                 <div class="tittle-style">
                 </div>
@@ -35,17 +36,18 @@
                     @endforeach
                 @endif
             </div>
+            <div class="fields-grid">
+                <label class="header pull-left">Total Donated Amount: {{ $total }}</label>
+                <label class="header pull-right">Available Amount: {{ $available }}</label>
+            </div>
             <div class="register-form" style="overflow-x:auto;">
                 <table class="table table-striped table-bordered">
                     <thead class="thead-dark">
                     <tr>
                         <th>Serial No</th>
                         <th>Donee Name</th>
-                        <th>Purpose</th>
-                        <th>Amount Needed</th>
-                        <th>Address</th>
-                        <th>Hospital</th>
-                        <th>Action</th>
+                        <th>Donator</th>
+                        <th>Amount Donated</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -57,12 +59,9 @@
                             @php $count++ @endphp
                             <tr>
                                 <td>{{ $count }}</td>
-                                <td>{{ $d->name }}</td>
-                                <td>{{ $d->purpose }}</td>
+                                <td>{{ $d->donee }}</td>
+                                <td>{{ $d->d_name }}</td>
                                 <td>{{ $d->amount }}</td>
-                                <td>{{ $d->address }}</td>
-                                <td>{{ $d->hospital }}</td>
-                                <td><a class="btn btn-success" href="{{ url('/donator/account-credit?donee='.$d->donee_id) }}">Donate Now</a></td>
                             </tr>
                         @endforeach
                     @endif
