@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\DonationRequests;
+use App\Notifications\Donation;
 use App\Transaction;
 use App\User;
 use App\UsersData;
@@ -41,6 +42,7 @@ class DonatorController extends Controller
                 if($trans->save()){
                     $trans->transaction_id = 'Trans'.sprintf('%05d', $trans->id);
                     $trans->save();
+                    User::find($request->user_id)->notify(new Donation());
                     return redirect()
                         ->to('/donator/account-credit')
                         ->with('success','You have successfully Donated '.$request->amount .' BDT');

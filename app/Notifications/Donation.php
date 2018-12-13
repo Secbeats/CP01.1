@@ -2,12 +2,14 @@
 
 namespace App\Notifications;
 
+use App\Transaction;
+use Auth;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class NewUsers extends Notification
+class Donation extends Notification
 {
     use Queueable;
 
@@ -54,8 +56,14 @@ class NewUsers extends Notification
      */
     public function toArray($notifiable)
     {
+        $id = Auth::id();
+        $trans = Transaction::where('user_id',$id)
+            ->orderBy('id','desc')
+            ->first();
         return [
-            'message' => 'New User Has Been Registered !',
+            'message' => 'You have successfully donated',
+            'data' => $trans->amount,
+            'donator_url' => '{{ url("/donator/transaction-history") }}'
         ];
     }
 }

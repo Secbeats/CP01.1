@@ -31,6 +31,15 @@
             </div>
             <div class="blog-info">
                 <div class="col-xs-8 blog-grid-text">
+                    <h4>Approve Donation</h4>
+                    <p>Sed interdum interdum accumsan. Aenean nec purus ac orci finibus facilisis. In sit amet placerat nisl, in auctor sapien.
+                        Donec ultricies faucibus ante rerum hic a sapiente delectus in auctor sapien. </p>
+                    <a class="button-style" href="{{ url('/admin/approve-donation') }}">Approve Donation</a>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="blog-info">
+                <div class="col-xs-8 blog-grid-text">
                     <h4>Total Donation</h4>
                     <p>Sed interdum interdum accumsan. Aenean nec purus ac orci finibus facilisis. In sit amet placerat nisl, in auctor sapien.
                         Donec ultricies faucibus ante rerum hic a sapiente delectus in auctor sapien. </p>

@@ -29,14 +29,20 @@
                     </a>
                     <ul class="dropdown-menu" role="menu">
                         @foreach(Auth::user()->notifications as $notification)
-                            <li><a style="font-size: 14px;" href="#">{{ $notification->data['data'] }}</a></li>
+                            @if(Auth::user()->role == 'admin')
+                                <li><a style="font-size: 14px;" href="#">{{ $notification->data['message'] }}<br/><small><i class="fa fa-clock-o">&nbsp;{{ date('d-M-y h:i A',strtotime($notification->created_at)) }}</i></small></a></li>
+                            @elseif(Auth::user()->role == 'donator')
+                                <li><a style="font-size: 14px;" href="{{ $notification->data['donator_url'] }}">{{ $notification->data['message'] }}{{ ' '.$notification->data['data'] }}<br/><small><i class="fa fa-clock-o">&nbsp;{{ date('d-M-y h:i A',strtotime($notification->created_at)) }}</i></small></a></li>
+                            @elseif(Auth::user()->role == 'donee')
+                                <li><a style="font-size: 14px;" href="{{ $notification->data['donee_url'] }}">{{ $notification->data['message'] }}<br/><small><i class="fa fa-clock-o">&nbsp;{{ date('d-M-y h:i A',strtotime($notification->created_at)) }}</i></small></a></li>
+                            @endif
                         @endforeach
                     </ul>
                 </li>
                 <a data-toggle="modal" data-target="#logout-modal" href="#"><span class="fa fa-sign-out" aria-hidden="true"></span>Logout</a>
             </div>
-            <div class="clearfix"> </div>
+            <div class="clearfix"></div>
         </div>
-        <div class="clearfix"> </div>
+        <div class="clearfix"></div>
     </div>
 </div>

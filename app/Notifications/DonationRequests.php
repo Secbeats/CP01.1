@@ -7,7 +7,7 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class NewUsers extends Notification
+class DonationRequests extends Notification
 {
     use Queueable;
 
@@ -54,8 +54,13 @@ class NewUsers extends Notification
      */
     public function toArray($notifiable)
     {
+        $dt_url = url('/donator/donation-requests');
+        $dn_url = url('/donee/donation-requests');
         return [
-            'message' => 'New User Has Been Registered !',
+            'message' => 'New Donation Request Has Been Approved',
+            'donator_url' => $dt_url,
+            'donee_url' => $dn_url,
+            'data' => ''
         ];
     }
 }

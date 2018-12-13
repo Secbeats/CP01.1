@@ -8,6 +8,8 @@ use App\Transaction;
 use App\User;
 use App\UsersData;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Notification;
 
 class AdminController extends Controller
 {
@@ -58,6 +60,7 @@ class AdminController extends Controller
     }
 
     public function approveDonation(Request $request){
+        $id = Auth::id();
         $dr = DonationRequests::where('status','requested')->get();
         foreach ($dr as $d){
             $files = DoneeFiles::where('user_id',$d->donee_id)->get();
@@ -66,7 +69,11 @@ class AdminController extends Controller
         if($request->isMethod('post')){
             $dr = DonationRequests::find($request->dr_id);
             $dr->status = $request->status;
+            $users = User::where('role','donator')->get();
             if ($dr->save()){
+                Notification::send($users, new \App\Notifications\DonationRequests());
+                User::find($id)->notify(new \App\Notifications\DonationRequests());
+                User::find($dr->donee_id)->notify(new \App\Notifications\DonationRequests());
                 return redirect()
                     ->to('/admin/approve-donation')
                     ->with('success','Donation Request has been approved for '. $dr->name);
