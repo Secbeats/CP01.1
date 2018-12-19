@@ -11,9 +11,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        <h1>
-                            <span class="fa fa-lightbulb-o" aria-hidden="true"></span>Helping Ray
-                        </h1>
+                        <img style="height:55px;width:200px;padding:0 !important;margin: 0 !important;" src="{{ asset('/public/assets/images/logo.png') }}" alt="Helping Ray Logo">
                     </a>
                 </div>
                 <!--/.navbar-header-->

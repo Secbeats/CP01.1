@@ -59,7 +59,7 @@
                             <td>{{ $d->address }}</td>
                             <td>{{ $d->hospital }}</td>
                             <td>{{ $d->contact }}</td>
-                            <td class="@if($d->status == 'requested'){{ 'red' }}@else {{ 'green' }}@endif">@if($d->status == 'requested'){{ 'pending' }}@else {{ 'Verified' }}@endif</td>
+                            <td class="@if($d->status == 'requested'){{ 'red' }}@endif">@if($d->status == 'requested'){{ 'pending' }}@else <a href="{{ url('/donee/transaction-history') }}" class="btn btn-success">Donation Status</a> @endif</td>
                         </tr>
                     @endforeach
                     </tbody>

@@ -37,7 +37,7 @@
                         </div>
                     @endforeach
                 @endif
-                <p>Your Account Has Been Created Successfully. Please Verify Your Account From Your Email. The Verification Link Will Expire Within 24 Hours.</p>
+                <p style="text-align: center;color: #EE5864;font-size: 150%;" class="breadcrumb">Please Verify Your Account From Your Email. The Verification Link Will Expire Within 24 Hours.</p>
             </div>
         </div>
     </div>

@@ -86,10 +86,17 @@ class DoneeController extends Controller
      * Transaction History
      **/
     public function transactionHistory(){
-        $trans = Transaction::where('user_role','donee')
+        $id = Auth::id();
+        $total = 0;
+        $trans = Transaction::where('reference',$id)
+            ->where('user_role','admin')
             ->get();
+        foreach ($trans as $t){
+            $total += $t->amount;
+        }
         return view('pages.donee.transaction',[
-            'trans' => $trans
+            'trans' => $trans,
+            'total' => $total
         ]);
     }
 
@@ -159,5 +166,6 @@ class DoneeController extends Controller
             'data' => $dr
         ]);
     }
+
 
 }

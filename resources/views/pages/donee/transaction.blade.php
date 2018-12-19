@@ -41,11 +41,24 @@
                     <tr>
                         <th>Serial No</th>
                         <th>Transaction Id</th>
-                        <th>Transaction Amount</th>
-                        <th>Payment Medium</th>
+                        <th>Donation Amount</th>
                     </tr>
                     </thead>
                     <tbody>
+                        @php $count = 0 @endphp
+                        @foreach($trans as $t)
+                            @php $count++ @endphp
+                            <tr>
+                                <td>{{ $count }}</td>
+                                <td>{{ $t->transaction_id }}</td>
+                                <td>{{ $t->amount - (($t->amount * 10) / 100) }}</td>
+                            </tr>
+                        @endforeach
+                        <tr>
+                            <td></td>
+                            <td>Total</td>
+                            <td>{{ $total - (($total * 10) / 100) }}</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

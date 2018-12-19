@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\DonationRequests;
 use App\DoneeFiles;
+use App\Notifications\Withdrawal;
 use App\Transaction;
 use App\User;
 use App\UsersData;
@@ -98,6 +99,7 @@ class AdminController extends Controller
     }
 
     public function withdrawal(Request $request){
+        $id = Auth::id();
         $total = 0;
         $dr = DonationRequests::where('status','approved')->get();
         $tdon = Transaction::where('user_id',$request->donator)
@@ -143,12 +145,17 @@ class AdminController extends Controller
                 $trans->status = $request->status;
                 $trans->donator = $request->donator;
                 if($trans->save()){
+                    $usr = DonationRequests::where('donee_id',$request->reference)->first();
                     $trans->transaction_id = 'Trans'.sprintf('%05d', $trans->id);
                     $trans->save();
                     $tr = Transaction::find($request->trans_id);
                     $tr->type = 'debit';
                     $tr->donator = $request->donator;
+                    $tr->reference = $request->reference;
                     $tr->save();
+                    User::find($id)->notify(new Withdrawal($trans->amount,$usr->name));
+                    User::find($request->reference)->notify(new Withdrawal($trans->amount,$usr->name));
+                    User::find($request->donator)->notify(new Withdrawal($trans->amount,$usr->name));
                     return redirect()
                         ->to('/admin/withdrawal')
                         ->with('success','You have successfully Withdrawal '.$request->amount .' BDT.');

@@ -57,7 +57,7 @@ class DonationRequests extends Notification
         $dt_url = url('/donator/donation-requests');
         $dn_url = url('/donee/donation-requests');
         return [
-            'message' => 'New Donation Request Has Been Approved',
+            'message' => 'A New Donation Request Has Been Approved',
             'donator_url' => $dt_url,
             'donee_url' => $dn_url,
             'data' => ''

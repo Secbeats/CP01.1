@@ -2,14 +2,12 @@
 
 namespace App\Notifications;
 
-use App\Transaction;
-use Auth;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class Donation extends Notification
+class Withdrawal extends Notification
 {
     use Queueable;
 
@@ -18,9 +16,12 @@ class Donation extends Notification
      *
      * @return void
      */
-    public function __construct()
+    protected $amount;
+    protected $name;
+    public function __construct($amount,$name)
     {
-        //
+        $this->amount = $amount;
+        $this->name = $name;
     }
 
     /**
@@ -56,15 +57,14 @@ class Donation extends Notification
      */
     public function toArray($notifiable)
     {
-        $id = Auth::id();
-        $trans = Transaction::where('user_id',$id)
-            ->orderBy('id','desc')
-            ->first();
-        $url = url("/donator/transaction-history");
+        $do_url = url('/donator/my-donees');
+        $dn_url = url('/donee/transaction-history');
+
         return [
-            'message' => 'You have successfully donated',
-            'data' => $trans->amount,
-            'donator_url' => $url
+            'message' => 'A Donation of '.$this->amount.' Has Been Given to '.$this->name,
+            'donator_url' => $do_url,
+            'donee_url' => $dn_url,
+            'data' => ''
         ];
     }
 }
