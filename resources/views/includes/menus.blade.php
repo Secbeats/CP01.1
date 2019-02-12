@@ -22,16 +22,13 @@
                                 <a href="{{ url('/') }}" class="effect-3">Home</a>
                             </li>
                             <li>
-                                <a href="{{ url('/about') }}" class="effect-3">About Us</a>
+                                <a href="{{ url('/about-us') }}" class="effect-3">About Us</a>
+                            </li>
+                            <li>
+                                <a href="{{ url('/services') }}" class="effect-3">Services</a>
                             </li>
                             <li>
                                 <a href="{{ url('/portfolio') }}" class="effect-3">Portfolio</a>
-                            </li>
-                            <li>
-                                <a href="{{ url('/privacy') }}" class="effect-3">Privacy</a>
-                            </li>
-                            <li>
-                                <a href="{{ url('/terms') }}" class="effect-3">Terms</a>
                             </li>
                             <li>
                                 <a href="{{ url('/contact') }}" class="effect-3">Contact Us</a>

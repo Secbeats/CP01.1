@@ -19,6 +19,10 @@ Route::get('/sign-up/confirm', 'HomeController@confirm');
 Route::get('/account/user/verify', 'HomeController@verifyUser');
 Route::get('/how-it-works', 'HomeController@howItWorks');
 Route::get('/terms', 'HomeController@terms');
+Route::get('/about-us', 'HomeController@aboutUs');
+Route::get('/services', 'HomeController@services');
+Route::get('/portfolio', 'HomeController@portfolio');
+Route::get('/contact', 'HomeController@contact');
 
 Route::prefix('admin')->group(function(){
     Route::get('/donators','AdminController@donators');

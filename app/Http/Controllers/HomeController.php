@@ -218,4 +218,16 @@ class HomeController extends Controller
     public function terms(){
         return view('pages.terms');
     }
+    public function aboutUs(){
+        return view('pages.about-us');
+    }
+    public function services(){
+        return view('pages.services');
+    }
+    public function portfolio(){
+        return view('pages.portfolio');
+    }
+    public function contact(){
+        return view('pages.contact');
+    }
 }

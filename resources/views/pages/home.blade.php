@@ -1,464 +1,322 @@
-@extends('layouts.app')
-@section('content')
-    <!-- banner -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1" class=""></li>
-            <li data-target="#myCarousel" data-slide-to="2" class=""></li>
-            <li data-target="#myCarousel" data-slide-to="3" class=""></li>
-        </ol>
-        <div class="carousel-inner" role="listbox">
-            <div class="item active">
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('/public/assets/css/jquery.flipster.css') }}">
+    <link rel="stylesheet" href="{{ asset('/public/assets/css/bootstrap.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('/public/assets/css/custom.css') }}" type="text/css">
+    <title>Helping Ray</title>
+</head>
+<body data-spy="scroll" data-target="#navbar-example2" data-offset="10">
+<div class="full-page">
+    <div class="header">
+        <div class="top-bar bg-lightgreen">
+            <div class="container">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-auto">
+                        <h4>Welcome To</h4>
+                    </div>
+                    <div class="col-auto">
+                        <ul class="d-flex align-items-center list-unstyled mb-0">
+                            <li><a href="{{ url('/login') }}">Login</a></li>
+                            <li><a href="{{ url('/sign-up') }}">Join with us</a></li>
+                            <li><a href="{{ url('/sign-up') }}">Donate</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar fixed-top1 navbar-expand-lg navbar-light bg-white" id="navbar-example2">
+            <div class="container"> <a class="navbar-brand" href="#"><img src="{{ asset('/public/assets/images/logo.png') }}" alt="logo"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"> <a class="nav-link" href="{{ url('/') }}">Home</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="{{ url('/about-us') }}">About us</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="{{ url('/services') }}">Services</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="{{ url('/portfolio') }}">Portfolios</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="{{ url('/contact') }}">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="home-sec1 text-center" style="background-image:url({{ asset('/public/assets/images/home-banner.jpg') }})">
+        <div class="home-sec1-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7"> <img src="{{ asset('/public/assets/images/home-ban-left.jpg') }}" alt=""> </div>
+                    <div class="col-lg-5">
+                        <div class="ban-cont text-center">
+                            <h4>Helping Ray</h4>
+                            <h5>Is a crowd Funding, <br>
+                                Social Welfare Organization </h5>
+                            <div class="doncircle">Donate</div>
+                            <h6>A Chance To Get Involve With Helping Ray.
+                               A True,Transparent Social Welfare Organization</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="home-sec2 text-center bg-bhura">
+        <div class="container">
+            <p>NGO in Bangladesh directly benefitting over 600,000 children and their families every year, through more than 250<br>
+                live welfare projects on education, healthcare, livelihood and women empowerment, in over 950 remote villages and slums across<br>
+                64 Districts of Bangladesh</p>
+        </div>
+    </div>
+    <div class="home-sec3" style="background-image:url({{ asset('/public/assets/images/home-3-bg.jpg') }})">
+        <div class="container">
+            <div class="service-container">
+                <div class="serve service-even bg-gredient-blue">
+                    <div class="serve-cont">
+                        <h3 class="bg-blue">Our Mission</h3>
+                        <p>This is to empower underprivileged children, youth and women through relevant education,
+                            innovative healthcare and market-focused livelihood programmers. This is to deploy best
+                            possible methodology and technology for achieving ideal SROI (social return on investment),
+                            to practice and promote good governance.</p>
+                        <a href="#" class="more">More >></a> </div>
+                </div>
+                <div class="serve service-odd bg-gredient-orange">
+                    <div class="serve-cont">
+                        <h3 class="bg-orange">Our Activities</h3>
+                        <p>Education Programmed Income Generation Programmed Technical Training Programmed
+                            Awareness Camp Campaign on Health And More... </p>
+                        <a href="#" class="more">More >></a> </div>
+                </div>
+                <div class="serve service-even bg-gredient-rose">
+                    <div class="serve-cont">
+                        <h3 class="bg-rose">Publications</h3>
+                        <p>Education is both the means as well as the end to a better life: the means because it empowers
+                            an individual to earn his/her livelihood and the end because it increases one's awareness on a
+                            range of issues – from healthcare to appropriate social behavior to understanding one's
+                            rights and in the process help him/her evolve as a better citizen.</p>
+                        <a href="#" class="more">More >></a> </div>
+                </div>
+                <div class="serve service-odd bg-gredient-green">
+                    <div class="serve-cont">
+                        <h3 class="bg-green">Participate</h3>
+                        <p>Doubtless, education is the most powerful catalyst for social transformation. But child
+                            education cannot be done in isolation. A child will go to school only if the family, particularly
+                            the mother, when an elder sibling is relevantly skilled to be employable and begins earning,
+                            the journey of empowerment continues beyond the present generation.</p>
+                        <a href="#" class="more">More >></a> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="home-sec4 text-center bg-bhura common-pad borde-bott" id="services">
+        <div class="container">
+            <h3>YOU MAY HELP THEM</h3>
+            <div class="flipster">
+                <ul>
+                    <li targ="sec1">
+                        <img src="{{ asset('/public/assets/images/img1.png') }}">
+                    </li>
+                    <li targ="sec2">
+                        <img src="{{ asset('/public/assets/images/img2.png') }}">
+                    </li>
+                    <li targ="sec3">
+                        <img src="{{ asset('/public/assets/images/img3.png') }}">
+                    </li>
+                    <li targ="sec4">
+                        <img src="{{ asset('/public/assets/images/img1.png') }}">
+                    </li>
+                    <li targ="sec5">
+                        <img src="{{ asset('/public/assets/images/img2.png') }}">
+                    </li>
+                    <li targ="sec6">
+                        <img src="{{ asset('/public/assets/images/img3.png') }}">
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="slid-content">
+                <div class="nit" id="divsec1">
+                    <h5>Details :</h5>
+                    <ul>
+                        <li>Name : Suhi</li>
+                        <li>Age : 6 Years</li>
+                        <li>Reason : Oparetion</li>
+                    </ul>
+                    <div class="cirldonr">
+                        Donate
+                    </div>
+                </div>
+                <div class="nit" id="divsec2">
+                    <h5>Details :</h5>
+                    <ul>
+                        <li>Name : juhi</li>
+                        <li>Age : 6 Years</li>
+                        <li>Reason : Oparetion</li>
+                    </ul>
+                    <div class="cirldonr">
+                        Donate
+                    </div>
+                </div>
+                <div class="nit" id="divsec3">
+                    <h5>Details :</h5>
+                    <ul>
+                        <li>Name : rias</li>
+                        <li>Age : 6 Years</li>
+                        <li>Reason : Oparetion</li>
+                    </ul>
+                    <div class="cirldonr">
+                        Donate
+                    </div>
+                </div>
+                <div class="nit" id="divsec4">
+                    <h5>Details :</h5>
+                    <ul>
+                        <li>Name : sahi</li>
+                        <li>Age : 6 Years</li>
+                        <li>Reason : Oparetion</li>
+                    </ul>
+                    <div class="cirldonr">
+                        Donate
+                    </div>
+                </div>
+                <div class="nit" id="divsec5">
+                    <h5>Details :</h5>
+                    <ul>
+                        <li>Name : yuhi</li>
+                        <li>Age : 6 Years</li>
+                        <li>Reason : Oparetion</li>
+                    </ul>
+                    <div class="cirldonr">
+                        Donate
+                    </div>
+                </div>
+                <div class="nit" id="divsec6">
+                    <h5>Details :</h5>
+                    <ul>
+                        <li>Name : Suhi</li>
+                        <li>Age : 6 Years</li>
+                        <li>Reason : Oparetion</li>
+                    </ul>
+                    <div class="cirldonr">
+                        Donate
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+    <div class="home-sec5 text-center" style="background-image:url({{ asset('/public/assets/images/galley-bg.jpg') }});">
+        <div class="container">
+            <h3>Thanks Lot the unkonwn people who help with us</h3>
+            <img src="{{ asset('/public/assets/images/gallery1.png') }}" alt="gallery"> </div>
+    </div>
+    <div class="home-sec6" style="background-image:url({{ asset('/public/assets/images/sec7-bg.jpg') }});">
+        <div class="container">
+            <div class="inner-homesec6">
+                <h4>WE ARE<br>
+                    READY<br>
+                    WITH<br>
+                    THE<br>
+                    BEST<br>
+                    HUMA<br>
+                    NITY</h4>
+                <div class="circle">
+                    <div class="inner-circle">
+                        <div class="circle-top-left circle-top">
+                            <div>
+                                <span>50+</span>Donators
+                            </div>
+                        </div>
+                        <div class="circle-top-right circle-top">
+                            <div>
+                                <span>50+</span>Donators
+                            </div>
+                        </div>
+                        <div class="circle-bottom-left circle-bottom">
+                            <div>
+                                <span>50+</span>Donators
+                            </div>
+                        </div>
+                        <div class="circle-bottom-right circle-bottom">
+                            <div>
+                                <span>50+</span>Donators
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="my-footer text-center" style="background-image:url({{ asset('/public/assets/images/footer-bg.jpg') }});" id="contact">
+        <div class="footer-overlay">
+            <div class="footer-pad">
                 <div class="container">
-                    <div class="carousel-caption">
-                        <h6>Welcome To Helping Ray</h6>
-                        <h3>We Volunteer. We Aid.
-                            <span>Spreading Hope</span>
-                        </h3>
-                        <p>A Chance To Get Envolve With The Best Social Organization In Bangladesh</p>
+                    <div class="row footer">
+                        <div class="col-lg-4">
+                            <h4>Location:</h4>
+                            <ul>
+                                <li>Bashundhara R/A,</li>
+                                <li>Dhaka, Bangladesh</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4">
+                            <h4>Mail Us:</h4>
+                            <ul>
+                                <li>Hotline : +8801970777XYZ</li>
+                                <li>Email : <a href="mailto:Email : support@helpingray.com">Email : support@helpingray.com</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4">
+                            <h4>Opening Hours:</h4>
+                            <ul>
+                                <li>Working Days : 10:00 am - 6:00 pm</li>
+                                <li>Friday & Saturday (Closed)</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="item item2">
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h6>Welcome To Helping Ray</h6>
-                        <h3>We Volunteer. We Aid.
-                            <span>Spreading Hope</span>
-                        </h3>
-                        <p>A Chance To Get Envolve With The Best Social Organization In Bangladesh</p>
-                    </div>
-                </div>
-            </div>
-            <div class="item item3">
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h6>Welcome To Helping Ray</h6>
-                        <h3>We Volunteer. We Aid.
-                            <span>Spreading Hope</span>
-                        </h3>
-                        <p>A Chance To Get Involved With The Best Social Organization In Bangladesh</p>
-                    </div>
-                </div>
-            </div>
-            <div class="item item4">
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h6>Welcome To Helping Ray</h6>
-                        <h3>We Volunteer. We Aid.
-                            <span>Spreading Hope</span>
-                        </h3>
-                        <p>A Chance To Get Envolve With The Best Social Organization In Bangladesh</p>
+                    <div class="footer-menu">
+                        <ul>
+                            <li><a href="{{ url('/') }}">Home</a></li>
+                            <li><a href="{{ url('/about-us') }}">About us</a></li>
+                            <li><a href="{{ url('/services') }}">Services</a></li>
+                            <li><a href="{{ url('/portfolio') }}">Portfolios</a></li>
+                            <li><a href="{{ url('/contact') }}">Contact us</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-            <span class="fa fa-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-            <span class="fa fa-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-        <!-- The Modal -->
     </div>
-    <!--//banner -->
-    <!-- about -->
-    <div class="banner-bottom-w3l" id="about">
+    <div class="footer-bottom">
         <div class="container">
-            <div class="title-div">
-                <h3 class="tittle">
-                    <span>W</span>elcome
-                </h3>
-                <div class="tittle-style">
-
-                </div>
-            </div>
-            <div class="welcome-sub-wthree">
-                <div class="col-md-6 banner_bottom_left">
-                    <h4>About
-                        <span>Helping Ray</span>
-                    </h4>
-                    <p>Lorem Ipsum convallis diam consequat magna vulputate malesuada. Cras a ornare elit, Nulla viverra pharetra sem eget.</p>
-                    <p>Pellentesque convallis diam consequat magna vulputate malesuada. Cras a ornare elit. Nulla viverra pharetra sem, eget
-                        pulvinar neque pharetra ac.Lorem Ipsum convallis diam consequat magna vulputate malesuada. Cras a ornare elit. Nulla
-                        viverra pharetra sem.</p>
-                </div>
-                <!-- Stats-->
-                <div class="col-md-6 stats-info-agile">
-                    <div class="col-xs-6 stats-grid stat-border">
-                        <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='5' data-delay='.5' data-increment="1">768</div>
-                        <p>Donators</p>
-                    </div>
-                    <div class="col-xs-6 stats-grid">
-                        <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='2' data-delay='.5' data-increment="1">678</div>
-                        <p>Donees</p>
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="child-stat">
-                        <div class="col-xs-6 stats-grid stat-border border-st2">
-                            <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='50' data-delay='.5' data-increment="1">800</div>
-                            <p>Certified Volunteer</p>
-                        </div>
-                        <div class="col-xs-6 stats-grid">
-                            <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='5' data-delay='.5' data-increment="1">485</div>
-                            <p>Hardworking Board of Directors</p>
-                        </div>
-                        <div class="clearfix"></div>
+            <div class="row align-items-center justify-content-md-between">
+                <div class="col-lg-auto">
+                    <div class="d-sm-flex align-items-center justify-content-md-center">
+                        <div class="copy mr-4"> © 2019 Helping Ray. All rights reserved | Developed by Secbeats</div>
                     </div>
                 </div>
-                <!-- //Stats -->
-                <div class="clearfix"> </div>
-            </div>
-        </div>
-    </div>
-    <!-- //about -->
-    <!-- services -->
-    <div class="services">
-        <div class="container">
-            <div class="title-div">
-                <h3 class="tittle">
-                    <span>O</span>ur
-                    <span>S</span>ervices
-                </h3>
-                <div class="tittle-style">
-
-                </div>
-            </div>
-            <div class="services-moksrow">
-                <div class="col-xs-4 services-grids-w3l">
-                    <div class="servi-shadow">
-                        <span class="fa fa-bullhorn icon" aria-hidden="true"></span>
-                        <h4>Popular Courses</h4>
-                        <p>Phasellus at placerat ante nulla adipiscing elit</p>
-                    </div>
-                </div>
-                <div class="col-xs-4 services-grids-w3l">
-                    <div class="servi-shadow">
-                        <span class="fa fa-certificate icon" aria-hidden="true"></span>
-                        <h4>Certification</h4>
-                        <p>Phasellus at placerat ante nulla adipiscing elit</p>
-                    </div>
-                </div>
-                <div class="col-xs-4 services-grids-w3l">
-                    <div class="servi-shadow">
-                        <span class="fa fa-book icon" aria-hidden="true"></span>
-                        <h4>Book Library</h4>
-                        <p>Phasellus at placerat ante nulla adipiscing elit</p>
-                    </div>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-            <div class="services-moksrow">
-                <div class="col-xs-4 services-grids-w3l">
-                    <div class="servi-shadow">
-                        <span class="fa fa-users icon" aria-hidden="true"></span>
-                        <h4>Best Teachers</h4>
-                        <p>Phasellus at placerat ante nulla adipiscing elit</p>
-                    </div>
-                </div>
-                <div class="col-xs-4 services-grids-w3l">
-                    <div class="servi-shadow">
-                        <span class="fa fa-bus icon" aria-hidden="true"></span>
-                        <h4>Transport Facility</h4>
-                        <p>Phasellus at placerat ante nulla adipiscing elit</p>
-                    </div>
-                </div>
-                <div class="col-xs-4 services-grids-w3l">
-                    <div class="servi-shadow">
-                        <span class="fa fa-laptop icon" aria-hidden="true"></span>
-                        <h4>Excellent Lab</h4>
-                        <p>Phasellus at placerat ante nulla adipiscing elit</p>
-                    </div>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-        </div>
-    </div>
-    <!-- //services -->
-    <!-- news -->
-    <div class="news" id="news">
-        <div class="container">
-            <div class="title-div">
-                <h3 class="tittle">
-                    <span>O</span>ur
-                    <span> E</span>vents
-                </h3>
-                <div class="tittle-style">
-
-                </div>
-            </div>
-            <div class="yaallahaa-news-grids-agile">
-                <div class="yaallahaa-news-grid">
-                    <div class="col-md-6 yaallahaa-news-left">
-                        <div class="col-xs-6 news-left-img">
-                            <div class="news-left-text color-event1">
-                                <h5>20 Dec</h5>
-                            </div>
-                        </div>
-                        <div class="col-xs-6 news-grid-info-bottom-w3ls">
-                            <div class="news-left-top-text text-color1">
-                                <a href="#" data-toggle="modal" data-target="#myModal">Integer viverra eleifend neque</a>
-                            </div>
-                            <div class="date-grid">
-                                <div class="admin">
-                                    <a href="#">
-                                        <span class="fa fa-clock-o" aria-hidden="true"></span> 7:00 pm - 9:00 pm</a>
-                                </div>
-                                <div class="time">
-                                    <p>
-                                        <span class="fa fa-map-marker" aria-hidden="true"></span> Newyork City, 2589</p>
-                                </div>
-                                <div class="clearfix"> </div>
-                            </div>
-                            <div class="news-grid-info-bottom-w3ls-text">
-                                <p>Aliquam erat volutpat. Duis vulputate tempus laoreet.</p>
-                            </div>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                    <div class="col-md-6 yaallahaa-news-left">
-                        <div class="col-xs-6 news-left-img news-left-img1">
-                            <div class="news-left-text color-event2">
-                                <h5>27 Dec</h5>
-                            </div>
-                        </div>
-                        <div class="col-xs-6 news-grid-info-bottom-w3ls">
-                            <div class="news-left-top-text text-color2">
-                                <a href="#" data-toggle="modal" data-target="#myModal">Integer viverra eleifend neque</a>
-                            </div>
-                            <div class="date-grid">
-                                <div class="admin">
-                                    <a href="#">
-                                        <span class="fa fa-clock-o" aria-hidden="true"></span> 6:00 am - 8:00 am</a>
-                                </div>
-                                <div class="time">
-                                    <p>
-                                        <span class="fa fa-map-marker" aria-hidden="true"></span> Newyork City, 1452</p>
-                                </div>
-                                <div class="clearfix"> </div>
-                            </div>
-                            <div class="news-grid-info-bottom-w3ls-text">
-                                <p>Aliquam erat volutpat. Duis vulputate tempus laoreet.</p>
-                            </div>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-                <div class="yaallahaa-news-grid">
-                    <div class="col-md-6 yaallahaa-news-left">
-                        <div class="col-xs-6 news-left-img news-left-img2">
-                            <div class="news-left-text color-event3">
-                                <h5>28 Dec</h5>
-                            </div>
-                        </div>
-                        <div class="col-xs-6 news-grid-info-bottom-w3ls">
-                            <div class="news-left-top-text text-color3">
-                                <a href="#" data-toggle="modal" data-target="#myModal">Integer viverra eleifend neque</a>
-                            </div>
-                            <div class="date-grid">
-                                <div class="admin">
-                                    <a href="#">
-                                        <span class="fa fa-clock-o" aria-hidden="true"></span> 10:00 am - 1:00 pm</a>
-                                </div>
-                                <div class="time">
-                                    <p>
-                                        <span class="fa fa-map-marker" aria-hidden="true"></span> Newyork City, 7458</p>
-                                </div>
-                                <div class="clearfix"> </div>
-                            </div>
-                            <div class="news-grid-info-bottom-w3ls-text">
-                                <p>Aliquam erat volutpat. Duis vulputate tempus laoreet.</p>
-                            </div>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                    <div class="col-md-6 yaallahaa-news-left">
-                        <div class="col-xs-6 news-left-img news-left-img3">
-                            <div class="news-left-text color-event4">
-                                <h5>30 Dec</h5>
-                            </div>
-                        </div>
-                        <div class="col-xs-6 news-grid-info-bottom-w3ls">
-                            <div class="news-left-top-text text-color4">
-                                <a href="#" data-toggle="modal" data-target="#myModal">Integer viverra eleifend neque</a>
-                            </div>
-                            <div class="date-grid">
-                                <div class="admin">
-                                    <a href="#">
-                                        <span class="fa fa-clock-o" aria-hidden="true"></span> 7:00 pm - 9:00 pm</a>
-                                </div>
-                                <div class="time">
-                                    <p>
-                                        <span class="fa fa-map-marker" aria-hidden="true"></span> Newyork City, 786.</p>
-                                </div>
-                                <div class="clearfix"> </div>
-                            </div>
-                            <div class="news-grid-info-bottom-w3ls-text">
-                                <p>Aliquam erat volutpat. Duis vulputate tempus laoreet.</p>
-                            </div>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                    <div class="clearfix"> </div>
+                <div class="col-lg-auto">
+                    <ul>
+                        <li><a href="#" class="bg-face"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#" class="bg-twitt"><i class="fab fa-twitter"></i></a></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
-    <!-- modal -->
-    <div class="modal about-modal fade" id="myModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <h4 class="modal-title">Helping
-                        <span>Ray</span>
-                    </h4>
-                </div>
-                <div class="modal-body">
-                    <div class="model-img-info">
-                        <img src="{{ asset('/public/assets/images/e1.jpg') }}" alt="" />
-                        <p>Duis venenatis, turpis eu bibendum porttitor, sapien quam ultricies tellus, ac rhoncus risus odio eget nunc. Pellentesque
-                            ac fermentum diam. Integer eu facilisis nunc, a iaculis felis. Pellentesque pellentesque tempor enim, in dapibus turpis
-                            porttitor quis. Suspendisse ultrices hendrerit massa. Nam id metus id tellus ultrices ullamcorper. Cras tempor massa
-                            luctus, varius lacus sit amet, blandit lorem. Duis auctor in tortor sed tristique. Proin sed finibus sem</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- //modal -->
-    <!-- //news -->
-    <!-- middle section -->
-    <div class="middle-sec-agile">
-        <div class="container">
-            <h4>Our
-                <span>Helping</span> Ray</h4>
-            <ul>
-                <li>
-                    <div class="midle-left-w3l">
-                        <span class="fa fa-check" aria-hidden="true"></span>
-                    </div>
-                    <div class="middle-right">
-                        <h5>Select A Course You Like And Explore It!</h5>
-                        <p>Integer eu facilisis nunc, a iaculis felis.</p>
-                    </div>
-                    <div class="clearfix"></div>
-                </li>
-                <li>
-                    <div class="midle-left-w3l">
-                        <span class="fa fa-check" aria-hidden="true"></span>
-                    </div>
-                    <div class="middle-right">
-                        <h5>Join A Seminar To Know More About It!</h5>
-                        <p>Integer eu facilisis nunc, a iaculis felis.</p>
-                    </div>
-                    <div class="clearfix"></div>
-                </li>
-                <li>
-                    <div class="midle-left-w3l">
-                        <span class="fa fa-check" aria-hidden="true"></span>
-                    </div>
-                    <div class="middle-right">
-                        <h5>Get Enrolled And Start Better Future With Us!</h5>
-                        <p>Integer eu facilisis nunc, a iaculis felis.</p>
-                    </div>
-                    <div class="clearfix"></div>
-                </li>
-            </ul>
-            <a class="button-style" href="{{ url('/sign-up') }}">Join Now</a>
-        </div>
-        <div class="pencil-img">
-            <img src="{{ asset('/public/assets/images/bg5.png') }}" alt="" />
-        </div>
-    </div>
-    <!-- //middle section -->
-    <!-- testimonials -->
-    <div class="testimonials">
-        <div class="container">
-            <div class="title-div">
-                <h3 class="tittle">
-                    <span>O</span>ur
-                    <span>B</span>oard
-                    <span>O</span>f
-                    <span>D</span>irector's
-                    <span>S</span>ay
-                </h3>
-                <div class="tittle-style">
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="{{ asset('/public/assets/js/bootstrap.min.js')}}"></script>
+<script src="{{ asset('/public/assets/js/jquery.flipster.js')}}"></script>
+<script src="{{ asset('/public/assets/js/custom.js')}}"></script>
 
-                </div>
-            </div>
-            <ul id="flexiselDemo1">
-                <li>
-                    <div class="three_testimonials_grid_main">
-                        <div class="col-xs-3 three_testimonials_grid_pos">
-                            <div class="grid-test-allah-agile">
-                                <img src="{{ asset('/public/assets/images/te1.jpg') }}" alt=" " class="img-responsive" />
-                            </div>
-                        </div>
-                        <div class="col-xs-9 three_testimonials_grid">
-                            <div class="three_testimonials_grid1">
-                                <h5>Michael Paul</h5>
-                                <p>Client 1</p>
-                            </div>
-                            <p>
-                                Donec laoreet eu purus eu viverra. Vestibulum sed convallis massa, eu aliquet massa. Suspendisse lacinia rutrum tincidunt.
-                                Integer id erat porta, convallis.
-                            </p>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="three_testimonials_grid_main">
-                        <div class="col-xs-3 three_testimonials_grid_pos">
-                            <div class="grid-test-allah-agile">
-                                <img src="{{ asset('/public/assets/images/te2.jpg') }}" alt=" " class="img-responsive" />
-                            </div>
-                        </div>
-                        <div class="col-xs-9 three_testimonials_grid">
-                            <div class="three_testimonials_grid1">
-                                <h5>Faul John</h5>
-                                <p>Client 2</p>
-                            </div>
-                            <p>
-                                Donec laoreet eu purus eu viverra. Vestibulum sed convallis massa, eu aliquet massa. Suspendisse lacinia rutrum tincidunt.
-                                Integer id erat porta, convallis.
-                            </p>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="three_testimonials_grid_main">
-                        <div class="col-xs-3 three_testimonials_grid_pos">
-                            <div class="grid-test-allah-agile">
-                                <img src="{{ asset('/public/assets/images/te3.jpg') }}" alt=" " class="img-responsive" />
-                            </div>
-                        </div>
-                        <div class="col-xs-9 three_testimonials_grid">
-                            <div class="three_testimonials_grid1">
-                                <h5>Richa Roy</h5>
-                                <p>Client 3</p>
-                            </div>
-                            <p>
-                                Donec laoreet eu purus eu viverra. Vestibulum sed convallis massa, eu aliquet massa. Suspendisse lacinia rutrum tincidunt.
-                                Integer id erat porta, convallis.
-                            </p>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                </li>
-
-            </ul>
-        </div>
-    </div>
-
-    <!-- //testimonials -->
-@endsection
+</body>
+</html>
