@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\DonationRequests;
+use App\DoneeFiles;
 use App\Notifications\NewUsers;
 use Illuminate\Http\Request;
 use Auth;
@@ -31,6 +33,13 @@ class HomeController extends Controller
         $id = '';
         $user = '';
         $usd = '';
+        $dnr = DonationRequests::where('status','approved')
+            ->get();
+        foreach ($dnr as $d){
+            $dnf = DoneeFiles::where('user_id',$d->donee_id)
+                ->first();
+            $d->image = $dnf->file_name;
+        }
         if(Auth::user()){
             if(Auth::user()->role == 'donator'){
                 $id = Auth::id();
@@ -45,7 +54,8 @@ class HomeController extends Controller
         }
         return view($page,[
             'user' => $user,
-            'usd' => $usd
+            'usd' => $usd,
+            'dnr' => $dnr
         ]);
     }
 

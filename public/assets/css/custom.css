@@ -581,7 +581,7 @@ div#success h5 {
 }
 .flip-content img {
     border-radius: 50%;
-    border: 15px #f54a9a solid;
+    border: 5px #f54a9a solid;
 }
 .inner-homesec6 {
     position: relative;
@@ -810,7 +810,7 @@ a.flipto-prev:hover,a.flipto-next:hover {
         width: 280px !important;
     }
     .flip-content img{
-        border-width:10px;
+        border-width:5px;
     }
     .footer .col-lg-4 + .col-lg-4 {
         margin-top: 40px;
@@ -988,7 +988,7 @@ a.flipto-prev:hover,a.flipto-next:hover {
         margin-top: 20px;
     }
     .flip-content img {
-        border-width: 6px;
+        border-width: 5px;
     }
     .inner-circle {
         width: 280px;

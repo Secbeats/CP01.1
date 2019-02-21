@@ -39,6 +39,9 @@
                 <form method="post" action="{{ url('/donee/request-donation') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="fields-grid">
+                        <label class="anim">
+                            <span>You Can Make Only One Donation Request.Your Request Will be Verified Before Approval.<br/><p style="color:red">***** Please Be Careful Before Making A Request *****</p></span><br/>
+                        </label>
                         <div class="styled-input">
                             <input type="text" name="name" placeholder="Patients Name" required>
                         </div>
@@ -58,7 +61,8 @@
                             <input id="contact" name="amount" type="text" placeholder="Enter Amount Needed" required>
                         </div>
                         <label class="anim">
-                            <span>Upload Patients Scanned Documents(Format : .jpg/.jpeg/.png)</span>
+                            <span>First Picture Should Be Patients Current Picture.</span><br/>
+                            <span>Upload Patients Scanned Documents(Multiple Files Can Be Selected.Format : .jpg/.jpeg/.png)</span>
                         </label>
                         <div class="styled-input">
                             <input id="contact" name="file[]" type="file" multiple required>

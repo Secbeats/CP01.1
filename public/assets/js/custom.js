@@ -7,15 +7,14 @@ $(document).ready(function () {
             $('.fixed-top1').removeClass("fixed-sticky");
         }
     });
-});
+    $(function(){
+        $(".flipster").flipster({
+            style: 'carousel',
+            enableMousewheel: false,
+            enableNavButtons: true
+        });
 
-$(function(){ 
-		$(".flipster").flipster({
-			style: 'carousel',
-			enableMousewheel: false,
-			enableNavButtons: true
-		});
-		
+    });
 });
 
 

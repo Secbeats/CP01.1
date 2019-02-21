@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use App\DonationRequests;
 use App\DoneeFiles;
+use App\Notifications\DoneeRequest;
 use App\User;
 use Auth;
 use App\UsersData;
 use Illuminate\Http\Request;
 use App\Transaction;
+use Illuminate\Support\Facades\Notification;
 
 class DoneeController extends Controller
 {
@@ -60,6 +62,9 @@ class DoneeController extends Controller
                         }
                     }
                     if($dr->save()){
+                        $admin = User::where('role','admin')->get();
+                        Notification::send($admin,new DoneeRequest());
+                        User::find($id)->notify(new DoneeRequest());
                         return redirect()
                             ->to('/donee/request-donation')
                             ->with('success','You have successfully Requested for '.$request->amount . ' BDT Donation');

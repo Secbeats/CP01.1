@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ asset('/public/assets/css/jquery.flipster.css') }}">
     <link rel="stylesheet" href="{{ asset('/public/assets/css/bootstrap.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/public/assets/css/custom.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('/public/assets/css/jquery.easy_slides.css') }}" type="text/css">
     <title>Helping Ray</title>
 </head>
 <body data-spy="scroll" data-target="#navbar-example2" data-offset="10">
@@ -48,7 +49,17 @@
         <div class="home-sec1-inner">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-7"> <img src="{{ asset('/public/assets/images/home-ban-left.jpg') }}" alt=""> </div>
+                    <div class="col-lg-7">
+                        <div class="slider slider_circle_10">
+                            <div><img src="{{ asset('/public/assets/images/c1.jpg') }}"></div>
+                            <div><img src="{{ asset('/public/assets/images/c2.jpg') }}"></div>
+                            <div><img src="{{ asset('/public/assets/images/c3.jpg') }}"></div>
+                            <div><img src="{{ asset('/public/assets/images/c5.jpg') }}"></div>
+                            <div><img src="{{ asset('/public/assets/images/c7.jpg') }}"></div>
+                            <div class="next_button"></div>
+                            <div class="prev_button"></div>
+                        </div>
+                    </div>
                     <div class="col-lg-5">
                         <div class="ban-cont text-center">
                             <h4>Helping Ray</h4>
@@ -115,95 +126,30 @@
             <h3>YOU MAY HELP THEM</h3>
             <div class="flipster">
                 <ul>
-                    <li targ="sec1">
-                        <img src="{{ asset('/public/assets/images/img1.png') }}">
-                    </li>
-                    <li targ="sec2">
-                        <img src="{{ asset('/public/assets/images/img2.png') }}">
-                    </li>
-                    <li targ="sec3">
-                        <img src="{{ asset('/public/assets/images/img3.png') }}">
-                    </li>
-                    <li targ="sec4">
-                        <img src="{{ asset('/public/assets/images/img1.png') }}">
-                    </li>
-                    <li targ="sec5">
-                        <img src="{{ asset('/public/assets/images/img2.png') }}">
-                    </li>
-                    <li targ="sec6">
-                        <img src="{{ asset('/public/assets/images/img3.png') }}">
-                    </li>
-
+                    @foreach($dnr as $d)
+                        <li targ="sec{{ $d->id }}">
+                            <img src="{{ asset('/public/uploads/donees/'.$d->donee_id.'/'.$d->image) }}">
+                        </li>
+                    @endforeach
                 </ul>
             </div>
 
             <div class="slid-content">
-                <div class="nit" id="divsec1">
+                @foreach($dnr as $d)
+                <div class="nit" id="divsec{{$d->id}}">
                     <h5>Details :</h5>
                     <ul>
-                        <li>Name : Suhi</li>
-                        <li>Age : 6 Years</li>
-                        <li>Reason : Oparetion</li>
+                        <li>Name : {{ $d->name }}</li>
+                        <li>Purpose : {{ $d->purpose }}</li>
+                        <li>Hospital : {{ $d->hospital }}</li>
+                        <li>Amount Needed : {{ $d->amount }}</li>
                     </ul>
                     <div class="cirldonr">
-                        Donate
+                        <a href="{{ url('/sign-up') }}">Donate</a>
                     </div>
                 </div>
-                <div class="nit" id="divsec2">
-                    <h5>Details :</h5>
-                    <ul>
-                        <li>Name : juhi</li>
-                        <li>Age : 6 Years</li>
-                        <li>Reason : Oparetion</li>
-                    </ul>
-                    <div class="cirldonr">
-                        Donate
-                    </div>
-                </div>
-                <div class="nit" id="divsec3">
-                    <h5>Details :</h5>
-                    <ul>
-                        <li>Name : rias</li>
-                        <li>Age : 6 Years</li>
-                        <li>Reason : Oparetion</li>
-                    </ul>
-                    <div class="cirldonr">
-                        Donate
-                    </div>
-                </div>
-                <div class="nit" id="divsec4">
-                    <h5>Details :</h5>
-                    <ul>
-                        <li>Name : sahi</li>
-                        <li>Age : 6 Years</li>
-                        <li>Reason : Oparetion</li>
-                    </ul>
-                    <div class="cirldonr">
-                        Donate
-                    </div>
-                </div>
-                <div class="nit" id="divsec5">
-                    <h5>Details :</h5>
-                    <ul>
-                        <li>Name : yuhi</li>
-                        <li>Age : 6 Years</li>
-                        <li>Reason : Oparetion</li>
-                    </ul>
-                    <div class="cirldonr">
-                        Donate
-                    </div>
-                </div>
-                <div class="nit" id="divsec6">
-                    <h5>Details :</h5>
-                    <ul>
-                        <li>Name : Suhi</li>
-                        <li>Age : 6 Years</li>
-                        <li>Reason : Oparetion</li>
-                    </ul>
-                    <div class="cirldonr">
-                        Donate
-                    </div>
-                </div>
+                @endforeach
+
             </div>
 
 
@@ -313,10 +259,19 @@
     </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="{{ asset('/public/assets/js/bootstrap.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-<script src="{{ asset('/public/assets/js/bootstrap.min.js')}}"></script>
 <script src="{{ asset('/public/assets/js/jquery.flipster.js')}}"></script>
 <script src="{{ asset('/public/assets/js/custom.js')}}"></script>
+<script src="{{ asset('/public/assets/js/jquery.easy_slides.js')}}"></script>
+<script>
+    $(document).ready(function() {
+        $('.slider_circle_10').EasySlides({
+            'autoplay': true,
+            'show': 13
+        })
+    });
 
+</script>
 </body>
 </html>
