@@ -61,7 +61,7 @@ class HomeController extends Controller
 
     /**
      * Donator Registration
-    **/
+     **/
 
     public function registration(Request $request){
         $errors = array();
@@ -115,14 +115,14 @@ class HomeController extends Controller
                 $linkExtension = $this->generateRandomString();
                 $link = url('/account/user/verify').'?link='.$linkExtension;
 
-                $transport = (new \Swift_SmtpTransport('ssl://test.helpingray.com', 465))
-                    ->setUsername("support@test.helpingray.com")
-                    ->setPassword('5^tKJJt{EEbl');
+                $transport = (new \Swift_SmtpTransport('ssl://helpingray.com', 465))
+                    ->setUsername("support@helpingray.com")
+                    ->setPassword('uNJ$k6$1GX1f');
 
                 $mailer = new \Swift_Mailer($transport);
 
                 $message = new \Swift_Message('Helping Ray - Account verify Link');
-                $message->setFrom(['support@test.helpingray.com' => 'Account verify link - Helping Ray']);
+                $message->setFrom(['support@helpingray.com' => 'Account verify link - Helping Ray']);
                 $message->setTo([$request->email => $request->name]);
                 $message->setBody('<html><body>'.
                     '<h1>Hi '.$request->name .',</h1>'.
@@ -191,7 +191,7 @@ class HomeController extends Controller
 
     /**
      * verify user
-    **/
+     **/
 
     public function verifyUser(Request $request){
         $linkCheck = VerifyUsers::where('link', $request->link)->first();
