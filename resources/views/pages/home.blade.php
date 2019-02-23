@@ -10,6 +10,19 @@
     <link rel="stylesheet" href="{{ asset('/public/assets/css/custom.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/public/assets/css/jquery.easy_slides.css') }}" type="text/css">
     <title>Helping Ray</title>
+    <style>
+        .flex-caption {
+            width: 96%;
+            padding: 2%;
+            left: 0;
+            bottom: 0;
+            background: rgba(0,0,0,.5);
+            color: #fff;
+            text-shadow: 0 -1px 0 rgba(0,0,0,.3);
+            font-size: 14px;
+            line-height: 18px;
+        }
+    </style>
 </head>
 <body data-spy="scroll" data-target="#navbar-example2" data-offset="10">
 <div class="full-page">
@@ -50,14 +63,26 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-7">
-                        <div class="slider slider_circle_10">
-                            <div><img src="{{ asset('/public/assets/images/c1.jpg') }}"></div>
-                            <div><img src="{{ asset('/public/assets/images/c2.jpg') }}"></div>
-                            <div><img src="{{ asset('/public/assets/images/c3.jpg') }}"></div>
-                            <div><img src="{{ asset('/public/assets/images/c5.jpg') }}"></div>
-                            <div><img src="{{ asset('/public/assets/images/c7.jpg') }}"></div>
-                            <div class="next_button"></div>
-                            <div class="prev_button"></div>
+                        <!-- Place somewhere in the <body> of your page -->
+                        <div class="flexslider">
+                            <ul class="slides">
+                                <li>
+                                    <img src="{{ asset('/public/assets/images/c1.jpg') }}" />
+                                    <p class="flex-caption">Adventurer Cheesecake Brownie</p>
+                                </li>
+                                <li>
+                                    <img src="{{ asset('/public/assets/images/c7.jpg') }}" />
+                                    <p class="flex-caption">Adventurer Lemon</p>
+                                </li>
+                                <li>
+                                    <img src="{{ asset('/public/assets/images/c3.jpg') }}" />
+                                    <p class="flex-caption">Adventurer Donut</p>
+                                </li>
+                                <li>
+                                    <img src="{{ asset('/public/assets/images/c2.jpg') }}" />
+                                    <p class="flex-caption">Adventurer Caramel</p>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                     <div class="col-lg-5">
@@ -265,11 +290,11 @@
 <script src="{{ asset('/public/assets/js/custom.js')}}"></script>
 <script src="{{ asset('/public/assets/js/jquery.easy_slides.js')}}"></script>
 <script>
+    // Can also be used with $(document).ready()
     $(document).ready(function() {
-        $('.slider_circle_10').EasySlides({
-            'autoplay': true,
-            'show': 13
-        })
+        $('.flexslider').flexslider({
+            animation: "slide"
+        });
     });
 
 </script>
