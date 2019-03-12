@@ -60,44 +60,55 @@
     </div>
     <div class="home-sec1 text-center" style="background-image:url({{ asset('/public/assets/images/home-banner.jpg') }})">
         <div class="home-sec1-inner">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-7">
+            <!--<div class="container">-->
+                <!--<div class="row">-->
+                <!--    <div class="col-lg-12">-->
                         <!-- Place somewhere in the <body> of your page -->
                         <div class="flexslider">
                             <ul class="slides">
-                                <li>
-                                    <img src="{{ asset('/public/assets/images/c1.jpg') }}" />
-                                    <p class="flex-caption">Adventurer Cheesecake Brownie</p>
-                                </li>
-                                <li>
-                                    <img src="{{ asset('/public/assets/images/c7.jpg') }}" />
-                                    <p class="flex-caption">Adventurer Lemon</p>
-                                </li>
+                                <!--<li>-->
+                                <!--    <img src="{{ asset('/public/assets/images/c1.jpg') }}" />-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                <!--    <img src="{{ asset('/public/assets/images/c2.jpg') }}" />-->
+                                <!--</li>-->
                                 <li>
                                     <img src="{{ asset('/public/assets/images/c3.jpg') }}" />
-                                    <p class="flex-caption">Adventurer Donut</p>
                                 </li>
                                 <li>
-                                    <img src="{{ asset('/public/assets/images/c2.jpg') }}" />
-                                    <p class="flex-caption">Adventurer Caramel</p>
+                                    <img src="{{ asset('/public/assets/images/c4.jpg') }}" />
+                                </li>
+                                <li>
+                                    <img src="{{ asset('/public/assets/images/c5.jpg') }}" />
+                                </li>
+                                <li>
+                                    <img src="{{ asset('/public/assets/images/c6.jpg') }}" />
+                                </li>
+                                <!--<li>-->
+                                <!--    <img src="{{ asset('/public/assets/images/c7.jpg') }}" />-->
+                                <!--</li>-->
+                                <li>
+                                    <img src="{{ asset('/public/assets/images/c8.jpg') }}" />
+                                </li>
+                                <li>
+                                    <img src="{{ asset('/public/assets/images/c9.jpg') }}" />
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-5">
-                        <div class="ban-cont text-center">
-                            <h4>Helping Ray</h4>
-                            <h5>Is a crowd Funding, <br>
-                                Social Welfare Organization </h5>
-                            <div class="doncircle">Donate</div>
-                            <h6>A Chance To Get Involve With Helping Ray.
-                               A True,Transparent Social Welfare Organization</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                    <!--<div class="col-lg-5">-->
+                    <!--    <div class="ban-cont text-center">-->
+                    <!--        <h4>Helping Ray</h4>-->
+                    <!--        <h5>Is a crowd Funding, <br>-->
+                    <!--            Social Welfare Organization </h5>-->
+                    <!--        <div class="doncircle"><a href="{{ url('/sign-up') }}">Donate</a></div>-->
+                    <!--        <h6>A Chance To Get Involve With Helping Ray.-->
+                    <!--           A True,Transparent Social Welfare Organization</h6>-->
+                    <!--    </div>-->
+                    <!--</div>-->
+            <!--    </div>-->
+            <!--</div>-->
+        <!--</div>-->
     </div>
     <div class="home-sec2 text-center bg-bhura">
         <div class="container">
@@ -112,31 +123,28 @@
                 <div class="serve service-even bg-gredient-blue">
                     <div class="serve-cont">
                         <h3 class="bg-blue">Our Mission</h3>
-                        <p>This is to empower underprivileged children, youth and women through relevant education,
-                            innovative healthcare and market-focused livelihood programmers. This is to deploy best
-                            possible methodology and technology for achieving ideal SROI (social return on investment),
-                            to practice and promote good governance.</p>
+                        <p>Our mission is to provide every essential and proper treatment to the financial weak persons whome are unable to do their treatment for the shortage of enough money.Our mission is to empowering people about the disease and the giving the proper guidance on that.Mostly we will aware people about the common disease causes and guide them that how can they overcome those by maintain proper guidance.We will provide emergency funds for those whose are not capable to bare any cost of treatment.
+                        </p>
                         <a href="#" class="more">More >></a> </div>
                 </div>
                 <div class="serve service-odd bg-gredient-orange">
                     <div class="serve-cont">
-                        <h3 class="bg-orange">Our Activities</h3>
-                        <p>Education Programmed Income Generation Programmed Technical Training Programmed
-                            Awareness Camp Campaign on Health And More... </p>
+                        <h3 class="bg-orange">Our Vision</h3>
+                        <p>Make people aware about the causes of serious disease.Gather every possible primary treatment methods in peoples mind to overcome any emergency situation.Decrease the percentage of unexpected death.
+Make a transparent bridge between donors and seekers that can save anyone’s life with providing essential fund for treatment and emergency surgery.
+</p>
                         <a href="#" class="more">More >></a> </div>
                 </div>
                 <div class="serve service-even bg-gredient-rose">
                     <div class="serve-cont">
-                        <h3 class="bg-rose">Publications</h3>
-                        <p>Education is both the means as well as the end to a better life: the means because it empowers
-                            an individual to earn his/her livelihood and the end because it increases one's awareness on a
-                            range of issues – from healthcare to appropriate social behavior to understanding one's
-                            rights and in the process help him/her evolve as a better citizen.</p>
+                        <h3 class="bg-rose">Our Goals</h3>
+                        <p>Identify the common health problems and find the risks upon people.To increase quality health services at the rural level.Aware people about the proper hygienic and sanitation uses and benefits.Educate rural people about the basic health, hygiene & sanitation.Train general people about first aid.Forward funds from the donors to unable donation seekers safely and securely.Help poor people to get proper treatment by forwarding emergency funds.
+</p>
                         <a href="#" class="more">More >></a> </div>
                 </div>
                 <div class="serve service-odd bg-gredient-green">
                     <div class="serve-cont">
-                        <h3 class="bg-green">Participate</h3>
+                        <h3 class="bg-green">Our Operations</h3>
                         <p>Doubtless, education is the most powerful catalyst for social transformation. But child
                             education cannot be done in isolation. A child will go to school only if the family, particularly
                             the mother, when an elder sibling is relevantly skilled to be employable and begins earning,

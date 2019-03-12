@@ -7,6 +7,7 @@ use App\DoneeFiles;
 use App\Notifications\NewUsers;
 use Illuminate\Http\Request;
 use Auth;
+use App\Transaction;
 use App\User;
 use App\UsersData;
 use App\VerifyUsers;
@@ -33,6 +34,7 @@ class HomeController extends Controller
         $id = '';
         $user = '';
         $usd = '';
+        $credit = 0;
         $dnr = DonationRequests::where('status','approved')
             ->get();
         foreach ($dnr as $d){
@@ -46,6 +48,12 @@ class HomeController extends Controller
                 $page = 'pages.donator.dashboard';
                 $user = User::find($id);
                 $usd = UsersData::where('user_id',$id)->first();
+                $cr = Transaction::where('user_id',$id)
+                ->where('type','credit')
+                ->get();
+                foreach($cr as $c){
+                    $credit += $c->amount;
+                }
             }elseif(Auth::user()->role == 'donee'){
                 $page = 'pages.donee.dashboard';
             }else{
@@ -55,13 +63,14 @@ class HomeController extends Controller
         return view($page,[
             'user' => $user,
             'usd' => $usd,
-            'dnr' => $dnr
+            'dnr' => $dnr,
+            'credit' => $credit
         ]);
     }
 
     /**
      * Donator Registration
-     **/
+    **/
 
     public function registration(Request $request){
         $errors = array();
@@ -191,7 +200,7 @@ class HomeController extends Controller
 
     /**
      * verify user
-     **/
+    **/
 
     public function verifyUser(Request $request){
         $linkCheck = VerifyUsers::where('link', $request->link)->first();

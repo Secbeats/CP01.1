@@ -63,7 +63,7 @@
                                 <td>{{ $d->dr->amount }}</td>
                                 <td>{{ $d->dr->address }}</td>
                                 <td>{{ $d->dr->hospital }}</td>
-                                <td>{{ $d->amount }}</td>
+                                <td>{{ $d->amount - ($d->amount * 10 /100) }}</td>
                                 <td>
                                     <a href="{{ url('/donator/view-donee/?donee='.$d->dr->donee_id) }}" class="btn btn-success">Check Status</a>
                                 </td>

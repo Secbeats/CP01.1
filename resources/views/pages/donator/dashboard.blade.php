@@ -12,6 +12,7 @@
                 </div>
             </div>
             <div class="blog-info">
+                <div class="col-xs-4 pull-right blog-grid-text"><h4>Donated: {{ $credit }}</h4></div>
                 <div class="col-xs-8 blog-grid-text">
                     <h4>Fund Donation</h4>
                     <p>Sed interdum interdum accumsan. Aenean nec purus ac orci finibus facilisis. In sit amet placerat nisl, in auctor sapien.

@@ -61,7 +61,7 @@ class Withdrawal extends Notification
         $dn_url = url('/donee/transaction-history');
 
         return [
-            'message' => 'A Donation of '.$this->amount.' Has Been Given to '.$this->name,
+            'message' => 'A Donation of '.($this->amount - ($this->amount * 10 / 100)).' Has Been Given to '.$this->name,
             'donator_url' => $do_url,
             'donee_url' => $dn_url,
             'data' => ''
